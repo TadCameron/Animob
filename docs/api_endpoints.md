@@ -101,7 +101,7 @@
         {
           "anime_title": string,
         :"trailer_url": string,
-          "image_url": string"
+          "image_url": string
         "synposis": string,
         }
       ]
