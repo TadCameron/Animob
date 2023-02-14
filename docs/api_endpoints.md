@@ -103,10 +103,10 @@
     {
       "animes": [
         {
-        "animeTitle": string,
-        "animeUrl": string,
-        "animeImg": string,
-        "synposis": string
+          "anime_title": string,
+        :"trailer_url": string,
+          "image_url": string"
+        "synposis": string,
         }
       ]
     }
