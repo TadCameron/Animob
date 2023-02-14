@@ -7,11 +7,11 @@
     {
       "animes": [
         {
-          "anime_name": string,
-          "episodes": string,
-          "tags": string,
-          "release_date": string,
-          "image_url": "string",
+          "animeTitle": string,
+          "episodeNum": string,
+          "genre": string,
+          "releasedDate": number,
+          "animeImg": string
         }
       ]
     }
@@ -29,11 +29,11 @@
     {
       "animes": [
         {
-          "anime_name": string,
-          "episodes": string,
-          "tags": string,
-          "release_date": string,
-          "image_url": "string",
+          "animeTitle": string,
+          "episodeNum": string,
+          "genre": string,
+          "releasedDate": string,
+          "animeImg": string
         }
       ]
     }
@@ -54,11 +54,11 @@
     {
       "animes": [
         {
-          "anime_title": string,
-          "tags": string,
-          "image_url": string,
-          "released_date":number,
-          "number_of_episodes": number,
+          "animeTitle": string,
+          "genre": string,
+          "animeImg": string,
+          "releasedDate":number,
+          "episodeNum": number
         }
       ]
     }
@@ -77,8 +77,12 @@
 * Response shape (JSON):
     json
 {
-"anime_title": string,
-"has_seen": boolean,
+  "animes": [
+    {
+      "animeTitle": string,
+      "has_seen": boolean
+    }
+  ]
 }
 
 
@@ -99,10 +103,10 @@
     {
       "animes": [
         {
-          "anime_title": string,
-        :"trailer_url": string,
-          "image_url": string"
-        "synposis": string,
+        "animeTitle": string,
+        "animeUrl": string,
+        "animeImg": string,
+        "synposis": string
         }
       ]
     }
@@ -119,8 +123,8 @@ Response shape:
   {
     "animes": [
     {
-        "anime_name": string,
-        "image_url": string
+        "animeTitle": string,
+        "animeImg": string
     }
     ]
    }
