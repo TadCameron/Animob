@@ -1,0 +1,1 @@
+Feb 13 - today we all worked on setting up MongoDB together. We also discussed changing our wireframes/condensing information and how we would access certain endpoints or filter data to have better recommended shows for users. One ah-ha moment I had was when creating our db.py file. The os.environ was not being accessed until I realized that we needed to import os. 
