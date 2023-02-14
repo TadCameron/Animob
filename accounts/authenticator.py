@@ -2,7 +2,11 @@ import os
 from fastapi import Depends
 from jwtdown_fastapi.authentication import Authenticator
 from queries.accounts import AccountQueries, AccountOut, AccountOutWithPassword
-
+from fastapi import FastAPI, HTTPException
+from fastapi.security import OAuth2PasswordBearer
+import jwt
+from passlib.hash import bcrypt
+from pymongo import MongoClient
 
 class MyAuthenticator(Authenticator):
     async def get_account_data(

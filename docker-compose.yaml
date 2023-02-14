@@ -9,13 +9,14 @@ services:
       environment:
         MONGO_INITDB_ROOT_USERNAME: root
         MONGO_INITDB_ROOT_PASSWORD: password
-
+      ports:
+        - "27017:27017"
   fastapi:
     build:
       context: ./animob
       dockerfile: ./Dockerfile.dev
     ports:
-      - 27017:27017
+      - 8000:8000
       # maybe this should be 27017:8000 (like in the project setup learn) ???
     volumes:
       - ./animob:/app

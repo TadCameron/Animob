@@ -20,6 +20,6 @@ class AccountQueries(Queries):
     #region properties
 
     def get(self, username:str) -> AccountOutWithPassword:
-     
+
 
     def create(self, user: AccountIn, hashed_password: str) -> AccountOutWithPassword:
