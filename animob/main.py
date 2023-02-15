@@ -33,5 +33,5 @@ def launch_details():
     }
 
 app.include_router(auth.authenticator.router)
-app.include_router(accounts.router)
-app.include_router(anime.router)
+app.include_router(accounts.router, tags=['Accounts'])
+app.include_router(anime.router, tags=['Anime'])

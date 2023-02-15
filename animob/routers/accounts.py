@@ -1,4 +1,4 @@
-# router.py
+
 from fastapi import (
     Depends,
     HTTPException,
@@ -51,26 +51,3 @@ async def create_account(
     form = AccountForm(username=info.email, password=info.password)
     token = await authenticator.login(response, request, form, accounts)
     return AccountToken(account=account, **token.dict())
-
-@router.delete("/api/accounts/{account_id}", response_model=bool)
-async def delete_account(account_id: int, queries: AccountQueries = Depends()):
-    queries.delete_account(account_id)
-    return True
-
-@router.put("/api/accounts/{account_id}", response_model=AccountOut)
-async def update_account(
-    account_id: int,
-    account_in: AccountIn,
-    response: Response,
-    queries: AccountQueries = Depends(),
-):
-    record = queries.update_account(account_id, account_in)
-    if record is None:
-        response.status_code = 404
-    else:
-        return record
-
-@router.get("/api/accounts", response_model=List[AccountOut])
-async def get_all_accounts(queries: AccountQueries = Depends()):
-    return queries.get_all_accounts()
-
