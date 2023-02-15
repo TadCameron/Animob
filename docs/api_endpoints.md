@@ -1,130 +1,90 @@
-### discover
-* Endpoint path: api/discover
-* Endpoint method: GET
-* Query parameters:
-* «name»: «purpose»
- ```json
-    {
-      "animes": [
-        {
-          "animeTitle": string,
-          "episodeNum": string,
-          "genre": string,
-          "releasedDate": number,
-          "animeImg": string
-        }
-      ]
-    }
-    ```
-
-
-### editors picks
-
-* Endpoint path: api/editors-pick
-* Endpoint method: GET
-
-
-* Response: A list of animes
- ```json
-    {
-      "animes": [
-        {
-          "animeTitle": string,
-          "episodeNum": string,
-          "genre": string,
-          "releasedDate": string,
-          "animeImg": string
-        }
-      ]
-    }
-
-
-
-### results
-
-* Endpoint path: /results
+<!-- list popular animes -->
+* Endpoint path: api/popular
 * Endpoint method: GET
 * Query parameters:
   * maybe the user info??
 
 * Headers:
   * Authorization: Login token
-
+* Response: list popular animes
 * Response shape (JSON):
     {
       "animes": [
         {
           "animeTitle": string,
-          "genre": string,
-          "animeImg": string,
-          "releasedDate":number,
-          "episodeNum": number
+        ,
         }
       ]
     }
 
-
-### seen animes
-
-* Endpoint path: /seen
+<!-- list top airing -->
+* Endpoint path: api/top-airing
 * Endpoint method: GET
 * Query parameters:
-
 * Headers:
-  * Authorization: Login token
-
-*Response: Get list of animes potentially seen
+  * Authorization: Bearer token
 * Response shape (JSON):
-    json
-{
-  "animes": [
     {
-      "animeTitle": string,
-      "has_seen": boolean
+      "animes": [
+        {
+          "animeTitle": string,
+          "animeImg": string,
+          "latestEp": int,
+          "genres": string,
+
+        }
+      ]
     }
-  ]
-}
 
-
-
-### anime detail
-
-* Endpoint path: /detail/{$anime_title$}
-
-
+<!-- get anime detail -->
+* Endpoint path: api/anime-detail/{$animeTitle}
 * Endpoint method: GET
 * Query parameters:
   * name of the anime
 
 * Headers:
   * Authorization: Login token
-
+* Response: detail of anime
 * Response shape (JSON):
     {
-      "animes": [
-        {
-          "anime_title": string,
-        :"trailer_url": string,
-          "image_url": string"
+        "animeTitle": string,
+        "genres": string,
+        <!-- "animeUrl": string,  --> ???maybe 
+        "animeImg": string"
         "synposis": string,
-        }
-      ]
+
     }
 
-### anime list
-
-Endpoint path: /animeList
+<!-- list anime genres -->
+Endpoint path: api/genres
 Endpoint method: GET
 Headers:
         Authorization: bearer token
-Response: A list of Anime
+Response: A list of all Anime genres
 Response shape:
     json
   {
     "animes": [
     {
-        "animeTitle": string,
-        "animeImg": string
+        "animeImg": string,
+        "genres": string,
+    }
+    ]
+   }
+
+<!-- list animes by genre -->
+Endpoint path: api/genre/${genre}
+Endpoint method: GET
+Headers:
+    Authorization: Bearer token
+Response: A list of a animes in genre
+Response shape:
+    json
+  {
+    "animes": [
+    {
+        "animeTitle": "string",
+
     }
     ]
    }
