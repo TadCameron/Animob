@@ -2,6 +2,8 @@ from pydantic import BaseModel
 from pymongo.errors import DuplicateKeyError
 from .client import Queries
 from typing import List
+from bson.objectid import ObjectId
+from pymongo.collection import ReturnDocument
 
 class DuplicateAccountError(ValueError):
     pass
