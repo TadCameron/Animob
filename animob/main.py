@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 
 from routers import auth
-from routers import accounts
+from routers import accounts, anime
 
 
 app = FastAPI()
@@ -34,3 +34,4 @@ def launch_details():
 
 app.include_router(auth.authenticator.router)
 app.include_router(accounts.router)
+app.include_router(anime.router)
