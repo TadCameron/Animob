@@ -61,7 +61,7 @@ def update_account(
     account_id: int,
     account_in: AccountIn,
     response: Response,
-    queries = AccountQueries = Depends(),
+    queries: AccountQueries = Depends(),
 ):
     record = queries.update_account(account_id, account_in)
     if record is None:
