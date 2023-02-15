@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from pymongo.errors import DuplicateKeyError
 from .client import Queries
+from typing import List
 
 class DuplicateAccountError(ValueError):
     pass
@@ -42,8 +43,12 @@ class AccountQueries(Queries):
     def delete_account(self, id: str) -> int:
         self.collection.delete_one({"_id": id})
 
-    def get_all_accounts(self, info: AccountOut) -> list[AccountOut]:
-        self.collection.find()
+    def get_all_accounts(self) -> List[AccountOut]:
+        accounts = []
+        for account in self.collection.find():
+            account["id"] = str(account["_id"])
+            accounts.append(AccountOut(**account))
+        return accounts
 
     def update_account(self, id: str, info: AccountIn) -> AccountOut:
         self.collection.update_one({"_id": id}, {"$set": info.dict()})
