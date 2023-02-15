@@ -6,24 +6,24 @@ class DuplicateAccountError(ValueError):
     pass
 
 class AccountIn(BaseModel):
-    full_name: str
-    email: str
     username: str
     password: str
 
-class AccountOut(AccountIn):
+class AccountOut(BaseModel):
     id: str
+    username: str
+    password: str
 
 class AccountOutWithPassword(AccountOut):
     hashed_password: str
 
 
 class AccountQueries(Queries):
-
+    DB_NAME = "animob"
     COLLECTION = "accounts"
 
-    def get(self, username: str) -> AccountOut:
-        props = self.collection.find_one({"username": username})
+    def get(self, email: str) -> AccountOut:
+        props = self.collection.find_one({"email": email})
         if not props:
             return None
         props["id"] = str(props["_id"])

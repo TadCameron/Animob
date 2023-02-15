@@ -50,3 +50,21 @@ async def create_account(
     form = AccountForm(username=info.email, password=info.password)
     token = await authenticator.login(response, request, form, accounts)
     return AccountToken(account=account, **token.dict())
+
+@router.delete("/api/accounts/{account_id}", response_model=bool)
+def delete_account(account_id: int, queries: AccountQueries = Depends()):
+    queries.delete_account(account_id)
+    return True
+
+@router.put("/api/accounts/{account_id}", response_model=AccountOut)
+def update_account(
+    account_id: int,
+    account_in: AccountIn,
+    response: Response,
+    queries = AccountQueries = Depends(),
+):
+    record = queries.update_account(account_id, account_in)
+    if record is None:
+        response.status_code = 404
+    else:
+        return record
