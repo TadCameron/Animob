@@ -11,7 +11,7 @@ services:
         MONGO_INITDB_ROOT_PASSWORD: password
       ports:
         - "27017:27017"
-  fastapi:
+  animob:
     build:
       context: ./animob
       dockerfile: ./Dockerfile.dev
@@ -21,10 +21,14 @@ services:
     volumes:
       - ./animob:/app
     environment:
+      SIGNING_KEY: 17C67526142E14B792DD73B7AE284va3453gsdg2
       DATABASE_URL: mongodb://root:password@mongo
       DATABASE_NAME: animob-data
       # this is supposed to be the db we want to connect to. ???
       WAIT_HOSTS: mongo:27017
+      WAIT_BEFORE: 5
+      WAIT_TIMEOUT: 60
+
 
   ghi:
     image: node:lts-bullseye
