@@ -6,20 +6,20 @@ class DuplicateAccountError(ValueError):
     pass
 
 class AccountIn(BaseModel):
+    full_name: str
+    email: str
     username: str
     password: str
 
-class AccountOut(BaseModel):
+class AccountOut(AccountIn):
     id: str
-    username: str
-    password: str
 
 class AccountOutWithPassword(AccountOut):
     hashed_password: str
 
 
 class AccountQueries(Queries):
-    DB_NAME = "animob"
+
     COLLECTION = "accounts"
 
     def get(self, email: str) -> AccountOut:

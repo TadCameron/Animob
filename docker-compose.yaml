@@ -7,10 +7,10 @@ services:
       volumes:
         - mongo-data:/data/db
       environment:
-        MONGO_INITDB_ROOT_USERNAME: root
-        MONGO_INITDB_ROOT_PASSWORD: password
-      ports:
-        - "27017:27017"
+        MONGO_INITDB_ROOT_USERNAME: animob
+        MONGO_INITDB_ROOT_PASSWORD: animob
+      # ports:
+      #   - "27017:27017"
   animob:
     build:
       context: ./animob
@@ -21,6 +21,10 @@ services:
     volumes:
       - ./animob:/app
     environment:
+      MONGOHOST: mongo
+      MONGODATABASE: animob
+      MONGOUSER: animob
+      MONGOPASSWORD: animob
       SIGNING_KEY: 17C67526142E14B792DD73B7AE284va3453gsdg2
       DATABASE_URL: mongodb://root:password@mongo
       DATABASE_NAME: animob-data
