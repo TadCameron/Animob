@@ -1,4 +1,4 @@
-# router.py
+
 from fastapi import (
     Depends,
     HTTPException,
@@ -51,4 +51,3 @@ async def create_account(
     form = AccountForm(username=info.username, password=info.password)
     token = await authenticator.login(response, request, form, accounts)
     return AccountToken(account=account, **token.dict())
-
