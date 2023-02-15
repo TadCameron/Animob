@@ -7,6 +7,7 @@ from fastapi import (
     APIRouter,
     Request,
 )
+from typing import List
 from jwtdown_fastapi.authentication import Token
 from .auth import authenticator
 
@@ -68,3 +69,8 @@ async def update_account(
         response.status_code = 404
     else:
         return record
+    
+@router.get("/api/accounts", response_model=List[AccountOut])
+async def get_all_accounts(queries: AccountQueries = Depends()):
+    return queries.get_all_accounts()
+
