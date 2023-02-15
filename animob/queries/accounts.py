@@ -22,8 +22,8 @@ class AccountQueries(Queries):
 
     COLLECTION = "accounts"
 
-    def get(self, email: str) -> AccountOut:
-        props = self.collection.find_one({"email": email})
+    def get(self, username: str) -> AccountOut:
+        props = self.collection.find_one({"username": username})
         if not props:
             return None
         props["id"] = str(props["_id"])
