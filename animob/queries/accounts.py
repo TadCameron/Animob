@@ -1,19 +1,18 @@
 from pydantic import BaseModel
 from pymongo.errors import DuplicateKeyError
 from .client import Queries
-from pymongo import MongoClient
 
 class DuplicateAccountError(ValueError):
     pass
 
 class AccountIn(BaseModel):
+    full_name: str
+    email: str
     username: str
     password: str
 
-class AccountOut(BaseModel):
+class AccountOut(AccountIn):
     id: str
-    username: str
-    password: str
 
 class AccountOutWithPassword(AccountOut):
     hashed_password: str
@@ -23,8 +22,8 @@ class AccountQueries(Queries):
     DB_NAME = "animob"
     COLLECTION = "accounts"
 
-    def get(self, email: str) -> AccountOut:
-        props = self.collection.find_one({"email": email})
+    def get(self, username: str) -> AccountOut:
+        props = self.collection.find_one({"username": username})
         if not props:
             return None
         props["id"] = str(props["_id"])
@@ -41,6 +40,10 @@ class AccountQueries(Queries):
         return AccountOut(**props)
 
     def delete_account(self, id: str) -> int:
-        with MongoClient(host=self.host, port=self.port) as client:
-            db = client[self.db_name]
-            db.users.delete_one({"id": id})
+        self.collection.delete_one({"_id": id})
+
+    def get_all_accounts(self, info: AccountOut) -> list[AccountOut]:
+        self.collection.find()
+
+    def update_account(self, id: str, info: AccountIn) -> AccountOut:
+        self.collection.update_one({"_id": id}, {"$set": info.dict()})
