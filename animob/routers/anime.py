@@ -46,11 +46,20 @@ def get_top_airing_anime(
     return repo.get_top_airing_anime()
 
 @router.get("/api/genre/")
-def get_genres(
-    genre: str,
-    repo: AnimeQueries = Depends()
-):
-    return repo.get_genres(genre)
+async def get_genres():
+    anime_genre = [
+    "action", "adventure", "cars", "comedy", "crime",
+    "dementia", "demons", "drama", "dub", "ecchi",
+    "family", "fantasy", "game", "gourmet", "harem",
+    "historical", "horror", "josei", "kids", "magic",
+    "martial-arts", "mecha", "military", "music",
+    "mystery", "parody", "police", "psychological",
+    "romance", "samurai", "school", "sci-fi", "seinen",
+    "shoujo", "shoujo-ai", "shounen", "shounen-ai",
+    "slice-of-Life", "space", "sports", "super-power",
+    "supernatural", "suspense", "thriller", "vampire",
+    "yaoi", "yuri",]
+    return {"genres": anime_genre}
 
 @router.get("/api/genre/{genre}")
 def get_anime_by_genre(
