@@ -25,7 +25,7 @@ services:
       MONGODATABASE: animob
       MONGOUSER: animob
       MONGOPASSWORD: animob
-      SIGNING_KEY: 17C67526142E14B792DD73B7AE284va3453gsdg2
+      SIGNING_KEY: ${SIGNING_KEY}
       DATABASE_URL: mongodb://root:password@mongo
       DATABASE_NAME: animob-data
       # this is supposed to be the db we want to connect to. ???
