@@ -26,14 +26,13 @@ class Genres(BaseModel):
 class GenreDetail(BaseModel):
     animeTitle: str
 
-@router.get('/api/popular/', response_model = Popular)
+@router.get('/api/popular/')
 def get_popular_anime(
     repo: AnimeQueries = Depends()
-
 ):
     return repo.get_popular_anime()
 
-@router.get('/api/anime-detail/{animeTitle}', response_model=Detail)
+@router.get("/api/anime-detail/")
 def get_anime_detail(
     name: str,
     repo: AnimeQueries = Depends()
@@ -52,7 +51,7 @@ def get_genres(
 ):
     return repo.get_genres()
 
-@router.get("/api/genre/{genre}", response_model=GenreDetail)
+@router.get("/api/genre/{genre}")
 def get_anime_by_genre(
     genre: str,
     repo: AnimeQueries = Depends()
