@@ -10,4 +10,4 @@ async def create_favorite(
     repo: FavoritesQueries = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
 ):
-    return repo.create_favorite(favorite_in=favorite_in, account_id = account_data['id'])
+    return repo.create(favorite_in=favorite_in, account_id = account_data['id'])

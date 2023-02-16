@@ -31,3 +31,5 @@ class FavoritesQueries(Queries):
       if results:
            results['id'] = str(results['_id'])
            return FavoritesOut(**results)
+
+    # def create_favorite(self, account_id:str, animeTitle:str, animeImg):
