@@ -32,7 +32,7 @@ def get_popular_anime(
 ):
     return repo.get_popular_anime()
 
-@router.get("/api/anime-detail/")
+@router.get("/api/anime-details/")
 def get_anime_detail(
     name: str,
     repo: AnimeQueries = Depends()

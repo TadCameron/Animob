@@ -7,7 +7,7 @@ class AnimeQueries:
         data = res.json()
         return data
     def get_anime_detail(self, animeId):
-        res = requests.get('https://gogoanime.consumet.stream/anime-detail/')
+        res = requests.get('https://gogoanime.consumet.stream/anime-details/'+ animeId)
         data = res.json()
         return data
     def get_top_airing_anime(self):
