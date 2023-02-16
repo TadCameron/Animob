@@ -45,11 +45,12 @@ def get_top_airing_anime(
 ):
     return repo.get_top_airing_anime()
 
-@router.get("/api/genres/", response_model=Genres )
+@router.get("/api/genre/")
 def get_genres(
+    genre: str,
     repo: AnimeQueries = Depends()
 ):
-    return repo.get_genres()
+    return repo.get_genres(genre)
 
 @router.get("/api/genre/{genre}")
 def get_anime_by_genre(
