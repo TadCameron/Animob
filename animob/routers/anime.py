@@ -39,7 +39,7 @@ def get_anime_detail(
 ):
     return repo.get_anime_detail(name)
 
-@router.get("/api/top-airing/", response_model=TopAiring)
+@router.get("/api/top-airing/")
 def get_top_airing_anime(
     repo: AnimeQueries = Depends()
 ):
