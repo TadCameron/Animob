@@ -1,4 +1,4 @@
-from pymongo import MongoClient
+from .client import Queries
 from pydantic import BaseModel
 
 class FavoritesIn(BaseModel):
@@ -7,12 +7,9 @@ class FavoritesIn(BaseModel):
 
 class FavoritesOut(FavoritesIn):
     id: str
-
-class Queries:
-    @property
-    def collection(self):
-        db = client[self.dbname]
-        return db[self.COLLECTION]
+    account_id: str
+class FavoritesList(BaseModel):
+    favorites: list[FavoritesOut]
 
 class FavoritesQueries(Queries):
     COLLECTION = 'favorites'
@@ -26,10 +23,18 @@ class FavoritesQueries(Queries):
             favorites.append(favorite)
         return favorites
 
-    def get_favorite(self, id) -> FavoritesOut:
-      results = self.collection.find_one({"_id": id})
+    def get_favorites(self, account_id) -> FavoritesOut:
+      results = self.collection.find_one({"_id": account_id})
       if results:
-           results['id'] = str(results['_id'])
-           return FavoritesOut(**results)
+           results['_id'] = str(results['account_id'])
+           return results
+      #return favoritesout(**result)
 
-    # def create_favorite(self, account_id:str, animeTitle:str, animeImg):
+    def create_favorite(self, account_id:str, favorite_in:FavoritesIn) -> FavoritesOut:
+        favorite_to_add = favorite_in.dict()
+        favorite_to_add['account_id'] = account_id
+        result = self.collection.insert_one(favorite_to_add)
+        if result.inserted_id:
+            result = self.get_favorites(result.inserted_id)
+            return result
+        #return favoritesout(**result)
