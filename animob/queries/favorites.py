@@ -18,16 +18,16 @@ class FavoritesQueries(Queries):
         results = self.collection.find({"account_id":account_id})
         favorites = []
         for row in results:
-            row['id'] = row['_id']
+            row['id'] = str(row['_id'])
             favorite= FavoritesOut(**row)
             favorites.append(favorite)
         return favorites
 
-    def get_favorites(self, account_id) -> FavoritesOut:
-      results = self.collection.find_one({"_id": account_id})
-      if results:
-           results['_id'] = str(results['account_id'])
-           return results
+    # def get_favorites(self, account_id) -> FavoritesOut:
+    #   results = self.collection.find_one({"_id": account_id})
+    #   if results:
+    #        results['_id'] = str(results['account_id'])
+    #        return results
       #return favoritesout(**result)
 
     def create_favorite(self, account_id:str, favorite_in:FavoritesIn) -> FavoritesOut:
