@@ -13,10 +13,11 @@ async def create_favorite(
     return repo.create_favorite(favorite_in=favorite_in, account_id = account_data['id'])
 
 @router.get('/api/favorites')
-async def get_favorites(
+async def get_all(
     account_data: dict = Depends(authenticator.get_current_account_data),
     repo: FavoritesQueries = Depends(),
+
 ):
     return{
-        'favorites': repo.get_favorites(account_id = account_data['id'])
+        'favorites': repo.get_all(account_id = account_data['id'])
     }
