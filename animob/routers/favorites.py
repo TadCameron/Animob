@@ -1,4 +1,4 @@
-from queries.favorites import FavoritesIn, FavoritesQueries
+from queries.favorites import FavoritesIn, FavoritesQueries, FavoritesList
 from fastapi import APIRouter, Depends
 from .auth import authenticator
 
@@ -11,3 +11,13 @@ async def create_favorite(
     account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     return repo.create_favorite(favorite_in=favorite_in, account_id = account_data['id'])
+
+@router.get('/api/favorites')
+async def get_all(
+    account_data: dict = Depends(authenticator.get_current_account_data),
+    repo: FavoritesQueries = Depends(),
+
+):
+    return{
+        'favorites': repo.get_all(account_id = account_data['id'])
+    }
