@@ -1,5 +1,6 @@
 from .client import Queries
 from pydantic import BaseModel
+from bson.objectid import ObjectId
 
 class FavoritesIn(BaseModel):
     animeTitle: str
@@ -40,5 +41,9 @@ class FavoritesQueries(Queries):
             result = self.get_favorites(result.inserted_id)
             return result
 
-    def delete_favorite(self, account_id:str, favorite_id:str) -> bool:
-        
+    def delete_favorite(self, account_id:str, favorite_id:str) -> list[FavoritesOut]:
+        result = self.collection.delete_one({"_id": ObjectId(favorite_id), "account_id": account_id})
+        if result.deleted_count == 1:
+            return self.get_all(account_id)
+        else:
+            raise ValueError(f"Favorite with id {favorite_id} not found for account {account_id}")
