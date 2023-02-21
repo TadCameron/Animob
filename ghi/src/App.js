@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import Construct from "./Construct.js";
 import ErrorNotification from "./ErrorNotification";
+import { AuthProvider, useToken } from "./useToken.js";
+
 import "./App.css";
+
+function GetToken() {
+  // Get token from JWT cookie (if already logged in)
+  useToken();
+  return null;
+}
 
 function App() {
   const [launch_info, setLaunchInfo] = useState([]);
@@ -27,10 +35,13 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <ErrorNotification error={error} />
-      <Construct info={launch_info} />
-    </div>
+    <AuthProvider>
+      <div>
+        <ErrorNotification error={error} />
+        {/* <Construct info={launch_info} /> */}
+        <GetToken />
+      </div>
+    </AuthProvider>
   );
 }
 

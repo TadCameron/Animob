@@ -1,6 +1,6 @@
 volumes:
   mongo-data:
-      external: true
+    external: true
 services:
   mongo:
       image: mongo:5
@@ -24,12 +24,12 @@ services:
       MONGOUSER: animob
       MONGOPASSWORD: animob
       SIGNING_KEY: 46ce38c45265e6a9547838588094eae4b2bff48c2e6d45f21d381f686a89cb65
+      SIGNING_KEY: 46ce38c45265e6a9547838588094eae4b2bff48c2e6d45f21d381f686a89cb65
       DATABASE_URL: mongodb://root:password@mongo
       DATABASE_NAME: animob-data
       WAIT_HOSTS: mongo:27017
       WAIT_BEFORE: 5
       WAIT_TIMEOUT: 60
-
 
   ghi:
     image: node:lts-bullseye
