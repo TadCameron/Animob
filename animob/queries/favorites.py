@@ -1,5 +1,6 @@
 from .client import Queries
 from pydantic import BaseModel
+from bson.objectid import ObjectId
 
 class FavoritesIn(BaseModel):
     animeTitle: str
@@ -16,11 +17,11 @@ class FavoritesQueries(Queries):
     COLLECTION = 'favorites'
 
     def get_all(self, account_id:str) -> list[FavoritesOut]:
-        print("*********")
         results = self.collection.find({"account_id":account_id})
         print(results)
         favorites = []
         for row in results:
+            row['id'] = str(row['_id'])
             row['id'] = str(row['_id'])
             favorite= FavoritesOut(**row)
             favorites.append(favorite)
@@ -39,3 +40,10 @@ class FavoritesQueries(Queries):
         if result.inserted_id:
             result = self.get_favorites(result.inserted_id)
             return result
+
+    def delete_favorite(self, account_id:str, favorite_id:str) -> list[FavoritesOut]:
+        result = self.collection.delete_one({"_id": ObjectId(favorite_id), "account_id": account_id})
+        if result.deleted_count == 1:
+            return self.get_all(account_id)
+        else:
+            raise ValueError(f"Favorite with id {favorite_id} not found for account {account_id}")
