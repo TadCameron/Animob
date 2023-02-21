@@ -17,7 +17,6 @@ class FavoritesQueries(Queries):
 
     def get_all(self, account_id:str) -> list[FavoritesOut]:
         results = self.collection.find({"account_id":account_id})
-        print(results)
         favorites = []
         for row in results:
             row['id'] = str(row['_id'])
@@ -40,5 +39,5 @@ class FavoritesQueries(Queries):
             result = self.get_favorites(result.inserted_id)
             return result
 
-    def delete_favorite(self, account_id:str, favorite_id:str) -> bool:
-        
+    # def delete_favorite(self, account_id:str, favorite_id:str) -> bool:
+    #     results = self.collection.delete_one({""
