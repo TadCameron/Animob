@@ -29,6 +29,30 @@ export const authApi = createApi({
         return (result && ['Account']) || [];
       },
     }),
+
+    logOut: builder.mutation({
+      query: () => ({
+        url: '/token',
+        method: 'delete',
+        credentials: 'include',
+      }),
+      invalidatesTags: ['Account', 'Token'],
+    }),
+  tagTypes: ['Account', 'Books', 'Token'],
+  endpoints: builder => ({
+    signUp: builder.mutation({
+      query: data => ({
+        url: '/api/accounts',
+        method: 'post',
+        body: data,
+        credentials: 'include',
+      }),
+      providesTags: ['Account'],
+      invalidatesTags: result => {
+        return (result && ['Token']) || [];
+      },
+    }),
+
     getToken: builder.query({
       query: () => ({
         url: '/token',
@@ -38,6 +62,6 @@ export const authApi = createApi({
       providesTags: ['Token'],
     }),
   }),
-});
+})
 
-export const { useLogin, useGetToken } = authApi;
+export const { useSignUpMutation, useLogOutMutation, useLoginMutation, useGetTokenQuery } = authApi;
