@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Construct from "./Construct.js";
-import AccountForm from "./AccountForm.js";
 import ErrorNotification from "./ErrorNotification";
 import "./App.css";
 
@@ -30,8 +29,7 @@ function App() {
   return (
     <div>
       <ErrorNotification error={error} />
-      {/* <Construct info={launch_info} /> */}
-      <AccountForm /> {/* I added */}
+      <Construct info={launch_info} />
     </div>
   );
 }
