@@ -1,4 +1,4 @@
-from queries.favorites import FavoritesIn, FavoritesQueries, FavoritesList
+from queries.favorites import FavoritesIn, FavoritesQueries
 from fastapi import APIRouter, Depends
 from .auth import authenticator
 

@@ -9,15 +9,13 @@ services:
       environment:
         MONGO_INITDB_ROOT_USERNAME: animob
         MONGO_INITDB_ROOT_PASSWORD: animob
-      # ports:
-      #   - "27017:27017"
   animob:
     build:
       context: ./animob
       dockerfile: ./Dockerfile.dev
     ports:
       - 8000:8000
-      # maybe this should be 27017:8000 (like in the project setup learn) ???
+
     volumes:
       - ./animob:/app
     environment:
@@ -25,10 +23,9 @@ services:
       MONGODATABASE: animob
       MONGOUSER: animob
       MONGOPASSWORD: animob
-      SIGNING_KEY: ${SIGNING_KEY}
+      SIGNING_KEY: 46ce38c45265e6a9547838588094eae4b2bff48c2e6d45f21d381f686a89cb65
       DATABASE_URL: mongodb://root:password@mongo
       DATABASE_NAME: animob-data
-      # this is supposed to be the db we want to connect to. ???
       WAIT_HOSTS: mongo:27017
       WAIT_BEFORE: 5
       WAIT_TIMEOUT: 60
