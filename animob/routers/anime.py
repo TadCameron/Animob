@@ -45,7 +45,7 @@ def get_top_airing_anime(
 ):
     return repo.get_top_airing_anime()
 
-@router.get("/api/genre/")
+@router.get("/api/genres/")
 async def get_genres():
     anime_genre = [
     "action", "adventure", "cars", "comedy", "crime",
@@ -61,7 +61,7 @@ async def get_genres():
     "yaoi", "yuri",]
     return {"genres": anime_genre}
 
-@router.get("/api/genre/{genre}")
+@router.get("/api/genres/{genre}")
 def get_anime_by_genre(
     genre: str,
     repo: AnimeQueries = Depends()

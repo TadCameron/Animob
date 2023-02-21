@@ -21,6 +21,7 @@ class FavoritesQueries(Queries):
         favorites = []
         for row in results:
             row['id'] = str(row['_id'])
+            row['id'] = str(row['_id'])
             favorite= FavoritesOut(**row)
             favorites.append(favorite)
         return favorites
