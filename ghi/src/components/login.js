@@ -1,31 +1,38 @@
-async function login(username, password) {
-  const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
+import { useToken } from './useToken'
 
-  const form = new FormData();
-  form.append("username", username);
-  form.append("password", password);
+function Login() {
+  const { token, login } = useToken();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  const response = await fetch(url, {
-    method: "post",
-    credentials: "include",
-    body: form,
-  });
-  if (response.ok) {
-    const tokenUrl = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/token`;
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const response = await fetch(tokenUrl, {
-        credentials: "include",
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
       });
       if (response.ok) {
         const data = await response.json();
-        const token = data.access_token;
-        // DO SOMETHING WITH THE TOKEN SO YOU CAN USE IT
-        // IN REQUESTS TO YOUR NON-ACCOUNTS SERVICES
+        login(data.token);
+      } else {
+        console.error('Failed to log in');
       }
-    } catch (e) {}
-    return false;
-  }
-  let error = await response.json();
-  // DO SOMETHING WITH THE ERROR, IF YOU WANT
+    } catch (err) {
+      console.error('Failed to log in', err);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      <button type="submit">Log in</button>
+    </form>
+  );
 }
+
+export default Login;

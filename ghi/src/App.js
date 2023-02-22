@@ -1,9 +1,9 @@
 import { AuthProvider, useToken } from './components/useToken'
 import './App.css';
+import { BrowserRouter, Router, Route } from 'react-router-dom';
 
 function GetToken() {
-    // Get token from JWT cookie (if already logged in)
-    useToken();
+  const { token } = useToken();
     return null
 }
 
@@ -12,8 +12,11 @@ function App() {
 
   return (
     <AuthProvider>
-      <GetToken />
-      {/* All of your other components, here */}
+      <BrowserRouter>
+
+          <GetToken />
+       
+      </BrowserRouter>
     </AuthProvider>
   );
 }
