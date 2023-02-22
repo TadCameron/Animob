@@ -8,13 +8,13 @@ class Popular(BaseModel):
     animeTitle: str
 
 class TopAiring(BaseModel):
-    animetitle: str
+    animeTitle: str
     animeImg: str
     latestEpi: int
     genres: str
 
 class Detail(BaseModel):
-    animetitle: str
+    animeTitle: str
     animeImg: str
     genres: str
     synopsis: str
