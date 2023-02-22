@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Construct from "./Construct.js";
-import ErrorNotification from "./ErrorNotification";
-
 import "./App.css";
+// import MainPage from './MainPage';
+// import Nav from './Nav';
+// import { BrowserRouter, Routes, Route } from 'react';
 
 
 function App() {
@@ -28,15 +28,7 @@ function App() {
     getData();
   }, []);
 
-  return (
 
-      <div>
-        <ErrorNotification error={error} />
-        <Construct info={launch_info} />
-
-      </div>
-
-  );
 }
 
 export default App;

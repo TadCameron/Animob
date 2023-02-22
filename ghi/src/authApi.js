@@ -5,7 +5,7 @@ export const authApiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.REACT_APP_SAMPLE_SERVICE_API_HOST,
   }),
-  tagTypes: ['Account', 'Books', 'Token'],
+  tagTypes: ['Account', 'Token'],
   endpoints: builder => ({
     signUp: builder.mutation({
       query: data => ({

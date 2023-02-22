@@ -1,4 +1,4 @@
-Feb 21-
+Feb 21- What a nightmare. Today we tried to implement Redux for front end auth aaaaaaand we got nowhere. 
 
 Feb 16- Today I did a lot of the driving and made the favorites query and routers. Some of them worked, but then others we had to put all of our brains together to fix it. The big ah-ha moment was that we were getting a type error for one of the models and str() around row['id'] was missing.
 
