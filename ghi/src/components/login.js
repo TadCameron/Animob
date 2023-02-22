@@ -2,7 +2,7 @@ import { useToken } from './useToken'
 import { useState } from 'react';
 
 function Login() {
-const { token, login } = useToken();
+const { login } = useToken();
 const [username, setUsername] = useState('');
 const [password, setPassword] = useState('');
 
