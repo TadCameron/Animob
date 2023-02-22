@@ -1,3 +1,6 @@
+2/21/2023
+Started on front end authentication today, honestly pretty lost. Hard going back and looking at front after it's being so long. Hopefully we get it soon.
+
 2/16/2023
 Been working on our routes today, specifally we've been working on the favorites. Sarah and Rowan are really killin it when it comes to solving these bugs. Mainly felt like a cheerleader today but still learned a good bit. I think all have to figure out now is the genre issue we've been having but at the rate we're going I'm sure we'll figure that out pretty quickly next week.
 
