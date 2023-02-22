@@ -1,9 +1,9 @@
-import { AuthProvider, useToken } from './components/useToken'
+import { AuthProvider, useAuthContext } from './components/useToken'
 import './App.css';
-import { BrowserRouter, Router, Route } from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
 
 function GetToken() {
-  const { token } = useToken();
+  const { token } = useAuthContext();
     return null
 }
 
