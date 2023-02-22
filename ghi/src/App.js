@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Login from './components/Login';
 import Logout from './components/Logout';
+import Signup from './components/Signup';
 
 function GetToken() {
   const { token } = useAuthContext();
@@ -12,18 +13,19 @@ function GetToken() {
 
 function App() {
   return (
+    <BrowserRouter>
     <AuthProvider>
-      <BrowserRouter>
       <Nav />
       <div className="container">
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path = "/signup" element={<Signup />} />
           </Routes>
           <GetToken />
       </div>
-      </BrowserRouter>
     </AuthProvider>
+    </BrowserRouter>
   );
 }
 

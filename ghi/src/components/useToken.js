@@ -97,13 +97,14 @@ export function useToken() {
     if (response.ok) {
       const token = await getTokenInternal();
       setToken(token);
+      navigate("/")
       return;
     }
     let error = await response.json();
     return handleErrorMessage(error);
   }
 
-  async function signup(username, password, email, firstName, lastName) {
+  async function signup(username, password, email, fullName) {
     const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/sign_up`;
     const response = await fetch(url, {
       method: "post",
@@ -111,8 +112,8 @@ export function useToken() {
         username,
         password,
         email,
-        first_name: firstName,
-        last_name: lastName,
+        full_name: fullName,
+
       }),
       headers: {
         "Content-Type": "application/json",
@@ -124,7 +125,7 @@ export function useToken() {
     return false;
   }
 
-  async function update(username, password, email, firstName, lastName) {
+  async function update(username, password, email, fullName) {
     const url = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/accounts`;
     const response = await fetch(url, {
       method: "patch",
@@ -132,8 +133,7 @@ export function useToken() {
         username,
         password,
         email,
-        first_name: firstName,
-        last_name: lastName,
+        full_name: fullName,
       }),
       headers: {
         "Content-Type": "application/json",
