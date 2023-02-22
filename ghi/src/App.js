@@ -2,7 +2,7 @@ import { AuthProvider, useAuthContext} from './components/useToken'
 import Nav from './Nav'
 import './App.css';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
-import Login from './components/Login';
+import Login from './components/login';
 import Logout from './components/Logout';
 
 function GetToken() {
