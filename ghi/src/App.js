@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Login from './components/login';
 import Logout from './components/Logout';
+import SignupForm from './components/signup';
 
 function GetToken() {
   const { token } = useAuthContext();
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/signup" element={<SignupForm />} />
           </Routes>
           <GetToken />
       </div>
