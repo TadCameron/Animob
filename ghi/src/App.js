@@ -1,6 +1,5 @@
-import { AuthProvider, useToken } from './store/useTokenSlice'
-import { useNavigate } from 'react-router-dom';
-
+import { AuthProvider, useToken } from './components/useToken'
+import './App.css';
 
 function GetToken() {
     // Get token from JWT cookie (if already logged in)
@@ -9,7 +8,7 @@ function GetToken() {
 }
 
 function App() {
-  const navigate = useNavigate();
+;
 
   return (
     <AuthProvider>
