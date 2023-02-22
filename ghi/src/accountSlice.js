@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+exitimport { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     show: null,
@@ -31,4 +31,3 @@ export const {
 
 export const LOG_IN_MODAL = 'LOG_IN_MODAL';
 export const SIGN_UP_MODAL = 'SIGN_UP_MODAL';
-
