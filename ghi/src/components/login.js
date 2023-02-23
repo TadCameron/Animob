@@ -26,6 +26,7 @@ async function handleSubmit(event) {
     <div className="accountpagecontainer">
     <div className="card" >
     <form onSubmit={handleSubmit}>
+      <h5 class="card-title">Log in</h5>
        <BootstrapInput type="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
        <BootstrapInput type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
        <button type="submit" className="btn btn-light">LOG IN</button>

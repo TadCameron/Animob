@@ -1,5 +1,6 @@
 import { useEffect, useState, } from "react";
 import { useParams } from "react-router-dom";
+import './anime.css';
 
 function AnimeDetail(props) {
     const [ detail, setDetail] = useState({})
@@ -22,27 +23,23 @@ function AnimeDetail(props) {
 
 
 return (
-    <table className="table table-striped">
-      <thead>
-        <tr>
-          <th>Anime Title</th>
-
-        </tr>
-      </thead>
-      <img className="img-fluid" src={detail.animeImg} alt="" />
-      <tbody>
-            <tr key={detail}>
-              <td>{detail.animeTitle}</td>
-              <td>{detail.synopsis}</td>
-
-            </tr>
-      </tbody>
-    </table>
+  <>
+  <div className="jumbotron-fluid">
+   <h1 className="display-4">{detail.animeTitle}</h1>
+   <hr class="my-4"></hr>
+    <h2>
+      <img className="card-img-top" src={detail.animeImg} alt="Card image cap" />
+    </h2>
+    <hr class="my-4"></hr>
+      <h4>TAGS</h4>
+      <h5 className="lead">{detail.genres}</h5>
+    <hr class="my-4"></hr>
+    <h5>SYNOPSIS</h5>
+    <p className="lead">{detail.synopsis}</p>
+    </div>
+  </>
   );
 
 }
 
 export default AnimeDetail
-
-// detail info points:
-// animeTitle, genres, animeImg, synposis,

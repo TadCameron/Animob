@@ -28,6 +28,7 @@ async function handleSubmit(event) {
     <div className="accountpagecontainer">
         <div className="card" >
         <form onSubmit={handleSubmit}>
+            <h5 class="card-title">Sign up</h5>
              <BootstrapInput
                 id="name"
                 placeholder="name"
