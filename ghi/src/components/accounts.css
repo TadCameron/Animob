@@ -1,0 +1,24 @@
+.card{
+    align-items: center;
+    text-align: center;
+    margin-top: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-bottom: 40%;
+    background-color: rgb(179, 201, 218);
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.accountpagecontainer {
+  background-image: url("http://4.bp.blogspot.com/-Iudw3fm41hk/UXzVl2QM_hI/AAAAAAAC-Rw/8yR8Vyqoang/s1600/Hunter+X+Hunter+-+77+-1.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100vw;
+  left: 0;
+}

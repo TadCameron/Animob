@@ -25,38 +25,42 @@ async function handleSubmit(event) {
     }
 
     return (
+    <div className="accountpagecontainer">
+        <div className="card" >
         <form onSubmit={handleSubmit}>
              <BootstrapInput
                 id="name"
                 placeholder="name"
-                labelText="name"
+                // labelText="name"
                 value={full_name}
                 onChange={e => setName(e.target.value)}
                 type="text" />
              <BootstrapInput
                 id="email"
                 placeholder="email"
-                labelText="email"
+                // labelText="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 type="email" />
             <BootstrapInput
                 id="username"
                 placeholder="username"
-                labelText="your username"
+                // labelText="your username"
                 value={username}
                 onChange={e => setUsername(e.target.value)}
                 type="username" />
             <BootstrapInput
                 id="password"
                 placeholder="password"
-                labelText="Password"
+                // labelText="Password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 type="password" />
 
-            <button type="submit" className="btn btn-dark">SUBMIT</button>
+            <button type="submit" className="btn btn-light">SUBMIT</button>
         </form>
+        </div>
+    </div>
     );
     }
 
