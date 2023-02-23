@@ -2,7 +2,7 @@ import { AuthProvider, useAuthContext} from './components/useToken'
 import Nav from './Nav'
 import './App.css';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
-import Login from './components/login';
+import Login from "./components/Login"
 import Logout from './components/Logout';
 import SignupForm from './components/signup';
 
@@ -14,7 +14,7 @@ function GetToken() {
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
+    <AuthProvider>
       <Nav />
       <div className="container">
           <Routes>
@@ -24,7 +24,7 @@ function App() {
           </Routes>
           <GetToken />
       </div>
-      </AuthProvider>
+    </AuthProvider>
     </BrowserRouter>
   );
 }
