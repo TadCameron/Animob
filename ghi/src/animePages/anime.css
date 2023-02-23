@@ -1,0 +1,10 @@
+.jumbotron-fluid{
+  align-content: left;
+  border:5px solid #000000;
+  width: 100%;
+  background-color: rgb(254, 151, 15);
+  text-align: center;
+  padding-right: 100px;
+  padding-left: 100px;
+
+}
