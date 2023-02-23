@@ -22,11 +22,13 @@ async function handleSubmit(event) {
     }
 
   return (
+    <div className="form-group">
     <form onSubmit={handleSubmit}>
        <BootstrapInput type="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
        <BootstrapInput type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
        <button type="submit" className="btn btn-dark">LOG IN</button>
     </form>
+    </div>
 );
 }
 
