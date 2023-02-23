@@ -2,9 +2,9 @@ import { AuthProvider, useAuthContext} from './components/useToken'
 import Nav from './Nav'
 import './App.css';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
-import Login from './components/Login';
+import Login from "./components/Login"
 import Logout from './components/Logout';
-import Signup from './components/Signup';
+import SignupForm from './components/signup';
 
 function GetToken() {
   const { token } = useAuthContext();
@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
-            <Route path = "/signup" element={<Signup />} />
+            <Route path="/signup" element={<SignupForm />} />
           </Routes>
           <GetToken />
       </div>
