@@ -1,0 +1,20 @@
+.card{
+    align-items: center;
+    text-align: center;
+    margin-top: 20%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 40%;
+    background-color: rgb(179, 201, 218);
+}
+
+.accountpagecontainer {
+  background-image: url("http://4.bp.blogspot.com/-Iudw3fm41hk/UXzVl2QM_hI/AAAAAAAC-Rw/8yR8Vyqoang/s1600/Hunter+X+Hunter+-+77+-1.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100vw;
+  left: 0;
+}
