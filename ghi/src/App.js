@@ -1,4 +1,5 @@
 import { AuthProvider, useAuthContext} from './components/useToken'
+import MainPage from './MainPage';
 import Nav from './Nav'
 import './App.css';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
@@ -18,6 +19,7 @@ function App() {
       <Nav />
       <div className="container">
           <Routes>
+            <Route index element={<MainPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/signup" element={<SignupForm />} />
