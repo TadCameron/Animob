@@ -1,7 +1,18 @@
 import { useToken } from './useToken'
 import { useState } from 'react';
 
-function Signup() {
+function BootstrapInput(props) {
+    const {id, placeholder, labelText, value, onChange, type } = props;
+
+    return (
+        <div className="mb-4">
+            <label htmlFor={id} className="form-label">{labelText}</label>
+            <input value={value} onChange={onChange} required type={type} className="form-control" id={id} placeholder={placeholder} ></input>
+        </div>
+    );
+}
+
+function SignupForm() {
 const { token, signup } = useToken();
 const [full_name, setFullName] = useState('');
 const [email, setEmail] = useState('');
@@ -15,14 +26,14 @@ async function handleSubmit(event) {
 
     return (
         <form onSubmit={handleSubmit}>
-             <BootstrapInput
+            <BootstrapInput
                 id="name"
                 placeholder="name"
                 labelText="name"
                 value={full_name}
-                onChange={e => setName(e.target.value)}
+                onChange={e => setFullName(e.target.value)}
                 type="text" />
-             <BootstrapInput
+            <BootstrapInput
                 id="email"
                 placeholder="email"
                 labelText="email"
