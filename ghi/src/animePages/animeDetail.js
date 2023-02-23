@@ -24,19 +24,24 @@ function AnimeDetail(props) {
 
 return (
   <>
-  <div className="jumbotron-fluid">
-   <h1 className="display-4">{detail.animeTitle}</h1>
-   <hr class="my-4"></hr>
-    <h2>
-      <img className="card-img-top" src={detail.animeImg} alt="Card image cap" />
-    </h2>
-    <hr class="my-4"></hr>
+  <div className="container">
+    <div className="row">
+      <div className="col-12 col-md-8">
+        <hr class="my-4"></hr>
+          <h1 className="display-4">{detail.animeTitle}</h1>
+        <hr class="my-4"></hr>
       <h4>TAGS</h4>
-      <h5 className="lead">{detail.genres}</h5>
+        <h5 className="lead">{detail.genres}</h5>
+       <hr class="my-4"></hr>
+      <h2>
+        <img src={detail.animeImg} alt="" />
+      </h2>
     <hr class="my-4"></hr>
-    <h5>SYNOPSIS</h5>
-    <p className="lead">{detail.synopsis}</p>
+      <h5>SYNOPSIS</h5>
+        <p className="lead">{detail.synopsis}</p>
+      </div>
     </div>
+  </div>
   </>
   );
 
