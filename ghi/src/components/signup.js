@@ -1,26 +1,65 @@
-import { useToken } from './useToken'
-import { useState } from 'react';
+import { useState } from "react";
+import { useToken } from "./useToken";
 
-function Signup() {
-const { token, signup } = useToken();
-const [full_name, setFullName] = useState('');
-const [email, setEmail] = useState('');
-const [username, setUsername] = useState('');
-const [password, setPassword] = useState('');
+function BootstrapInput(props) {
+    const {id, placeholder, labelText, value, onChange, type } = props;
+    return (
+        <div className="mb-4">
+            <label htmlFor={id} className="form-label">{labelText}</label>
+            <input value={value} onChange={onChange} required type={type} className="form-control" id={id} placeholder={placeholder} ></input>
+        </div>
+    );
+}
+function SignupForm() {
+    const { signup } = useToken();
+    const [username, setUsername] =  useState('');
+    const [password, setPassword] = useState('');
+    const [full_name, setName] =  useState('');
+    const [email, setEmail] = useState('');
 
 async function handleSubmit(event) {
   event.preventDefault();
-    signup(full_name, email, username, password)
+    signup(username, password, full_name, email)
     }
+    
+    return (
+    <div className="accountpagecontainer">
+        <div className="card" >
+        <form onSubmit={handleSubmit}>
+            <h5 className="card-title">Sign up</h5>
+            <BootstrapInput
+                id="name"
+                placeholder="name"
+                // labelText="name"
+                value={full_name}
+                onChange={e => setName(e.target.value)}
+                type="text" />
+            <BootstrapInput
+                id="email"
+                placeholder="email"
+                // labelText="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                type="email" />
+            <BootstrapInput
+                id="username"
+                placeholder="username"
+                // labelText="your username"
+                value={username}
+                onChange={e => setUsername(e.target.value)}
+                type="username" />
+            <BootstrapInput
+                id="password"
+                placeholder="password"
+                // labelText="Password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                type="password" />
+            <button type="submit" className="btn btn-light">SUBMIT</button>
+        </form>
+        </div>
+    </div>
+    );
+    }
+    export default SignupForm
 
-  return (
-    <form onSubmit={handleSubmit}>
-        <input type="full_name" placeholder="Full Name" value={full_name} onChange={(e) => setFullName(e.target.value)} />
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input type="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <button type="submit">Sign up</button>
-    </form>
-);}
-
-export default Signup;
