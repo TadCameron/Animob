@@ -32,6 +32,3 @@ async function handleSubmit(event) {
 
 
 export default Login;
-
-
-// inside handle submit, call login function
