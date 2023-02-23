@@ -13,14 +13,40 @@ async function handleSubmit(event) {
     signup(full_name, email, username, password)
     }
 
-  return (
-    <form onSubmit={handleSubmit}>
-        <input type="full_name" placeholder="Full Name" value={full_name} onChange={(e) => setFullName(e.target.value)} />
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input type="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <button type="submit">Sign up</button>
-    </form>
-);}
+    return (
+        <form onSubmit={handleSubmit}>
+             <BootstrapInput
+                id="name"
+                placeholder="name"
+                labelText="name"
+                value={full_name}
+                onChange={e => setName(e.target.value)}
+                type="text" />
+             <BootstrapInput
+                id="email"
+                placeholder="email"
+                labelText="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                type="email" />
+            <BootstrapInput
+                id="username"
+                placeholder="username"
+                labelText="your username"
+                value={username}
+                onChange={e => setUsername(e.target.value)}
+                type="username" />
+            <BootstrapInput
+                id="password"
+                placeholder="password"
+                labelText="Password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                type="password" />
 
-export default Signup;
+            <button type="submit" className="btn btn-dark">SUBMIT</button>
+        </form>
+    );
+    }
+
+    export default SignupForm
