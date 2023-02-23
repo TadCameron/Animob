@@ -21,18 +21,8 @@ code {
 
 }
 
-.main {
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: right;
-  text-align: center;
-  }
-
   .mainpagecontainer {
-  background-image: url('https://e0.pxfuel.com/wallpapers/63/714/desktop-wallpaper-demon-slayer-red-spider-lily-tokyo-ghoul-flower-anime-flower-lycoris-radiata.jpg');
+  background-image: url('https://pbs.twimg.com/media/FhTgQvuXEAQ0wNE.jpg:large');
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
