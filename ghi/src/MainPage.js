@@ -5,9 +5,7 @@ function MainPage() {
   return (
     <>
 
-    <div className='main'>
-      <img src={'https://e0.pxfuel.com/wallpapers/63/714/desktop-wallpaper-demon-slayer-red-spider-lily-tokyo-ghoul-flower-anime-flower-lycoris-radiata.jpg'}/>
-    </div>
+    <div className="mainpagecontainer">
       <div className="px-5 py-2 my-5 text-light position-absolute" id="main-view">
         <h1 className="display-1 fw-bold text-center"></h1>
           <div className="mask rgba-black-light align-items-center">
@@ -25,6 +23,7 @@ function MainPage() {
               </div>
             </div>
           </div>
+        </div>
 
       </>
   );

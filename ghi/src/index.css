@@ -30,3 +30,25 @@ code {
   align-items: right;
   text-align: center;
   }
+
+  .mainpagecontainer {
+  background-image: url('https://e0.pxfuel.com/wallpapers/63/714/desktop-wallpaper-demon-slayer-red-spider-lily-tokyo-ghoul-flower-anime-flower-lycoris-radiata.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100vw;
+  left: 0;
+}
+
+.otherpagescontainer {
+  background-image: url("https://wallpaper.dog/large/10733962.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100vw;
+  left: 0;
+}
