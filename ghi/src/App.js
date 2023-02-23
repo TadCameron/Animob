@@ -13,8 +13,8 @@ function GetToken() {
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
       <Nav />
       <div className="container">
           <Routes>
@@ -24,8 +24,8 @@ function App() {
           </Routes>
           <GetToken />
       </div>
-      </BrowserRouter>
-    </AuthProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
