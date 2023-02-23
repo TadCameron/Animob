@@ -2,10 +2,7 @@ import { useEffect, useState, } from "react";
 import { useParams } from "react-router-dom";
 
 function AnimeDetail(props) {
-    const [ title, setTitle] = useState("")
-    const [ genre, setGenre] = useState("")
-    const [ animeImg, setAnimeImg] = useState("")
-    const [ synopsis, setSynopsis] = useState("")
+    const [ detail, setDetail] = useState({})
 
     const { animeTitle } = useParams();
 
@@ -15,10 +12,7 @@ function AnimeDetail(props) {
         if (response.ok) {
             const data = await response.json();
             console.log(data)
-            setTitle(data.animeTitle)
-            setGenre(data.genre)
-            setAnimeImg(data.animeImg)
-            setSynopsis(data.synopsis)
+            setDetail(data)
         }
     }
 
@@ -27,7 +21,24 @@ function AnimeDetail(props) {
     }, [])
 
 
+return (
+    <table className="table table-striped">
+      <thead>
+        <tr>
+          <th>Anime Title</th>
 
+        </tr>
+      </thead>
+      <img className="img-fluid" src={detail.animeImg} alt="" />
+      <tbody>
+            <tr key={detail}>
+              <td>{detail.animeTitle}</td>
+              <td>{detail.synopsis}</td>
+
+            </tr>
+      </tbody>
+    </table>
+  );
 
 }
 
