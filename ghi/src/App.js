@@ -7,6 +7,9 @@ import Login from "./components/login"
 import Logout from './components/Logout';
 import SignupForm from './components/Signup';
 import AnimeDetail from './animePages/animeDetail';
+import GenreList from './animePages/genreList';
+import AnimeByGenre from './animePages/AnimeByGenre';
+
 
 function GetToken() {
   const { token } = useAuthContext();
@@ -25,6 +28,8 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/anime-detail/:animeTitle" element={<AnimeDetail />} />
+            <Route path="/genres" element={<GenreList />} />
+            <Route path="/genre/:genre" element={<AnimeByGenre />} />
           </Routes>
           <GetToken />
       </div>

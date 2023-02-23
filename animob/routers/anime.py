@@ -59,7 +59,7 @@ async def get_genres():
     "slice-of-Life", "space", "sports", "super-power",
     "supernatural", "suspense", "thriller", "vampire",
     "yaoi", "yuri",]
-    return {"genres": anime_genre}
+    return anime_genre
 
 @router.get("/api/genres/{genre}")
 def get_anime_by_genre(
