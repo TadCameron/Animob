@@ -1,5 +1,6 @@
 import { useToken } from './useToken'
 import { useState } from 'react';
+import './accounts.css';
 
 function BootstrapInput(props) {
     const {id, placeholder, labelText, value, onChange, type } = props;
@@ -22,12 +23,14 @@ async function handleSubmit(event) {
     }
 
   return (
-    <div className="form-group">
+    <div className="accountpagecontainer">
+    <div className="card" >
     <form onSubmit={handleSubmit}>
        <BootstrapInput type="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
        <BootstrapInput type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-       <button type="submit" className="btn btn-dark">LOG IN</button>
+       <button type="submit" className="btn btn-light">LOG IN</button>
     </form>
+    </div>
     </div>
 );
 }

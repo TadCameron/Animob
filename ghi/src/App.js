@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Login from "./components/login"
 import Logout from './components/Logout';
 import SignupForm from './components/signup';
+import AnimeDetail from './animePages/animeDetail';
 
 function GetToken() {
   const { token } = useAuthContext();
@@ -23,6 +24,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/signup" element={<SignupForm />} />
+            <Route path="/anime-detail/:animeTitle" element={<AnimeDetail />} />
           </Routes>
           <GetToken />
       </div>
