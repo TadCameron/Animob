@@ -2,10 +2,6 @@ import { useEffect, useState, } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-function ReplaceDumbChars(x){
-    var stuff = x.replace(/\s+/g, '-').toLowerCase().replace(':','').replace('/','').replace('!','').replace(',','');
-    return stuff
-}
 
 function AnimeByGenre() {
     const [ genreName, setGenre] = useState([])
