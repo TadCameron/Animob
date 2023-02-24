@@ -1,7 +1,7 @@
 import { useEffect, useState, } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import animeTitle from "./animeDetail";
+
 
 function AnimeByGenre() {
     const [ genreName, setGenre] = useState([])
@@ -36,7 +36,7 @@ return (
                     <img src={anime.animeImg} className="card-img-top" alt="" id="animeimage"></img>
                         <div className="card-body">
                          <h5 className="card-title">{anime.animeTitle}</h5>
-                         <Link className="btn btn-primary" to={`/anime-detail/?name=${animeTitle}`}>See Details</Link>
+                         <Link className="btn btn-primary" to={`/anime-detail/${anime.animeTitle}`}>{anime.animeTitle}</Link>
                         </div>
                 </div>
             </div>
