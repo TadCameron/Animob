@@ -5,7 +5,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Login from "./components/Login"
 import Logout from './components/Logout';
-import SignupForm from './components/signup';
+import SignupForm from './components/Signup';
 import AnimeDetail from './animePages/animeDetail';
 import GenreList from './animePages/genreList';
 import AnimeByGenre from './animePages/AnimeByGenre';

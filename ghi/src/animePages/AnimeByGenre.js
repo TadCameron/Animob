@@ -1,6 +1,7 @@
 import { useEffect, useState, } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import animeTitle from "./animeDetail";
 
 function AnimeByGenre() {
     const [ genreName, setGenre] = useState([])
@@ -22,26 +23,30 @@ const getData = async () => {
         getData()
     }, [])
 
+
 return (
-<table className="table table-striped">
-    <thead>
-        <tr>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
+    <>
+<div className="genrecontainer">
+ <div className="row row-cols-2 row-cols-md-3 g-4">
     {genreName.map(anime => {
     return (
-        <tr key={anime.animeId}>
-          <td>{anime.animeTitle}</td>
-            <img src={anime.animeImg} alt="" />
-        </tr>
+        <div key={anime.animeId}>
+            <div className="col d-flex justify-content-center">
+                <div className="card" id="animecard">
+                    <img src={anime.animeImg} className="card-img-top" alt="" id="animeimage"></img>
+                        <div className="card-body">
+                         <h5 className="card-title">{anime.animeTitle}</h5>
+                         <Link className="btn btn-primary" to={`/anime-detail/?name=${animeTitle}`}>See Details</Link>
+                        </div>
+                </div>
+            </div>
+        </div>
       );
        })}
-    </tbody>
-</table>
+    </div>
+</div>
+</>
     );
-
 }
 
 export default AnimeByGenre
