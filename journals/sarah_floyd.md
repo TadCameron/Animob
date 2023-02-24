@@ -1,4 +1,8 @@
-Feb 21- What a nightmare. Today we tried to implement Redux for front end auth aaaaaaand we got nowhere. 
+Feb 23- Today we got most out our anime routes in React done. Tad and Row did most of the driving and did great. Jaiden and I worked togther to start adding a little style to our pages.
+
+Feb 22- Today we all worked together again and decided against using Redux and to just stick with React. This worked out much more easily. We had the front end auth done within a few hours.
+
+Feb 21- What a nightmare. Today we tried to implement Redux for front end auth aaaaaaand we got nowhere.
 
 Feb 16- Today I did a lot of the driving and made the favorites query and routers. Some of them worked, but then others we had to put all of our brains together to fix it. The big ah-ha moment was that we were getting a type error for one of the models and str() around row['id'] was missing.
 

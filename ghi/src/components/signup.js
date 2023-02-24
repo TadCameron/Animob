@@ -21,7 +21,7 @@ async function handleSubmit(event) {
   event.preventDefault();
     signup(username, password, full_name, email)
     }
-    
+
     return (
     <div className="accountpagecontainer">
         <div className="card" >
@@ -62,4 +62,3 @@ async function handleSubmit(event) {
     );
     }
     export default SignupForm
-

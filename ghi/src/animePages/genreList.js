@@ -22,13 +22,13 @@ const getData = async () => {
      return (
         <>
         <div className="animegenrecontainer">
-            <h1 tag="genreheader">GENRES</h1>
+            <h1 id="genreheader">GENRES</h1>
             <div className="row row-cols-2 row-cols-md-3 g-4">
                 {genres.map(genre => {
                     return (
                         <div key={genre}>
                             <div className="col d-flex">
-                                <div className="card">
+                                <div className="card" id="genrecard">
                                     <div className="card-body">
                                     <h5 className="card-title"><Link to={`/genres/${genre}`}>{genre}</Link></h5>
                                  </div>
