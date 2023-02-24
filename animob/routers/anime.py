@@ -48,17 +48,17 @@ def get_top_airing_anime(
 @router.get("/api/genres/")
 async def get_genres():
     anime_genre = [
-    "action", "adventure", "cars", "comedy", "crime",
-    "dementia", "demons", "drama", "dub", "ecchi",
-    "family", "fantasy", "game", "gourmet", "harem",
-    "historical", "horror", "josei", "kids", "magic",
-    "martial-arts", "mecha", "military", "music",
-    "mystery", "parody", "police", "psychological",
-    "romance", "samurai", "school", "sci-fi", "seinen",
-    "shoujo", "shoujo-ai", "shounen", "shounen-ai",
-    "slice-of-Life", "space", "sports", "super-power",
-    "supernatural", "suspense", "thriller", "vampire",
-    "yaoi", "yuri",]
+    "Action", "Adventure", "Cars", "Comedy", "Crime",
+    "Dementia", "Demons", "Drama", "Dub", "Ecchi",
+    "Family", "Fantasy", "Game", "Gourmet", "Harem",
+    "Historical", "Horror", "Josei", "Kids", "Magic",
+    "Martial-arts", "Mecha", "Military", "Music",
+    "Mystery", "Parody", "Police", "Psychological",
+    "Romance", "Samurai", "School", "Sci-fi", "Seinen",
+    "Shoujo", "Shoujo-ai", "Shounen", "Shounen-ai",
+    "Slice-of-Life", "Space", "Sports", "Super-power",
+    "Supernatural", "Suspense", "Thriller", "Vampire",
+    "Yaoi", "Yuri",]
     return anime_genre
 
 @router.get("/api/genres/{genre}")

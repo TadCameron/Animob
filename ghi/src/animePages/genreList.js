@@ -30,7 +30,7 @@ const getData = async () => {
                             <div className="col d-flex">
                                 <div className="card" id="genrecard">
                                     <div className="card-body">
-                                    <h5 className="card-title"><Link to={`/genres/${genre}`}>{genre}</Link></h5>
+                                    <h5 className="card-title" id="genrecardbody"><Link to={`/genres/${genre}`}>{genre}</Link></h5>
                                  </div>
                             </div>
                             </div>
