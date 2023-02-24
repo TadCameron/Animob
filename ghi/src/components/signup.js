@@ -11,7 +11,7 @@ function BootstrapInput(props) {
     );
 }
 function SignupForm() {
-    const { signup } = useToken();
+    const { token, signup } = useToken();
     const [username, setUsername] =  useState('');
     const [password, setPassword] = useState('');
     const [full_name, setName] =  useState('');
@@ -20,6 +20,8 @@ function SignupForm() {
 async function handleSubmit(event) {
   event.preventDefault();
     signup(username, password, full_name, email)
+    localStorage.setItem(token, 'tokenValue')
+    console.log('**********', token)
     }
 
     return (

@@ -13,13 +13,15 @@ function BootstrapInput(props) {
     );
 }
 function Login() {
-const { login } = useToken();
+const { token, login } = useToken();
 const [username, setUsername] = useState('');
 const [password, setPassword] = useState('');
 
 async function handleSubmit(event) {
   event.preventDefault();
     login(username, password)
+    localStorage.setItem(token, 'tokenValue')
+    console.log('**********', token)
     }
 
   return (

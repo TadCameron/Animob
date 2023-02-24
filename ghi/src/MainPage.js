@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom"
 import './index.css';
+import { useAuthContext } from "./components/useToken";
+
 
 function MainPage() {
+  const { token } = useAuthContext()
+  console.log("****", token)
   return (
     <>
 
