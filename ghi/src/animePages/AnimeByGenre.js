@@ -36,7 +36,7 @@ return (
                     <img src={anime.animeImg} className="card-img-top" alt="" id="animeimage"></img>
                         <div className="card-body">
                          <h5 className="card-title">{anime.animeTitle}</h5>
-                         <Link className="btn btn-primary" to={`/anime-detail/${anime.animeId}`}>{anime.animeTitle}</Link>
+                         <Link className="btn btn-primary" to={`/anime-detail/${anime.animeId}`}>See Details</Link>
                         </div>
                 </div>
             </div>
