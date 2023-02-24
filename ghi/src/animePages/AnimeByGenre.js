@@ -2,6 +2,10 @@ import { useEffect, useState, } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
+function ReplaceDumbChars(x){
+    var stuff = x.replace(/\s+/g, '-').toLowerCase().replace(':','').replace('/','').replace('!','').replace(',','');
+    return stuff
+}
 
 function AnimeByGenre() {
     const [ genreName, setGenre] = useState([])
@@ -36,7 +40,7 @@ return (
                     <img src={anime.animeImg} className="card-img-top" alt="" id="animeimage"></img>
                         <div className="card-body">
                          <h5 className="card-title">{anime.animeTitle}</h5>
-                         <Link className="btn btn-primary" to={`/anime-detail/${anime.animeTitle.replace(/\s+/g, '-').toLowerCase().replace(':','').replace('/','') }`}>{anime.animeTitle}</Link>
+                         <Link className="btn btn-primary" to={`/anime-detail/${anime.animeId}`}>{anime.animeTitle}</Link>
                         </div>
                 </div>
             </div>
