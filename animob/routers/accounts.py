@@ -7,7 +7,7 @@ from fastapi import (
     APIRouter,
     Request,
 )
-from typing import List
+
 from jwtdown_fastapi.authentication import Token
 from .auth import authenticator
 
@@ -20,15 +20,19 @@ from queries.accounts import (
     DuplicateAccountError,
 )
 
+
 class AccountForm(BaseModel):
     username: str
     password: str
 
+
 class AccountToken(Token):
     account: AccountOut
 
+
 class HttpError(BaseModel):
     detail: str
+
 
 router = APIRouter()
 
@@ -51,6 +55,7 @@ async def create_account(
     form = AccountForm(username=info.username, password=info.password)
     token = await authenticator.login(response, request, form, accounts)
     return AccountToken(account=account, **token.dict())
+
 
 @router.get("/token", response_model=AccountToken | None)
 async def get_token(

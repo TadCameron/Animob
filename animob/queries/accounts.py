@@ -6,14 +6,17 @@ from .client import Queries
 class DuplicateAccountError(ValueError):
     pass
 
+
 class AccountIn(BaseModel):
     full_name: str
     email: str
     username: str
     password: str
 
+
 class AccountOut(AccountIn):
     id: str
+
 
 class AccountQueries(Queries):
     DB_NAME = "animob"

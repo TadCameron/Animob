@@ -8,7 +8,7 @@ function AnimeDetail(props) {
     const { animeTitle } = useParams();
 
     const getData = async () => {
-        const response = await fetch(`http://localhost:8000/api/anime-details/?name=${animeTitle}`);
+        const response = await fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/anime-details/?name=${animeTitle}`);
 
         if (response.ok) {
             const data = await response.json();
