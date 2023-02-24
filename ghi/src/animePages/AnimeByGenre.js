@@ -36,7 +36,7 @@ return (
                     <img src={anime.animeImg} className="card-img-top" alt="" id="animeimage"></img>
                         <div className="card-body">
                          <h5 className="card-title">{anime.animeTitle}</h5>
-                         <Link className="btn btn-primary" to={`/anime-detail/${anime.animeTitle.replace(/\s+/g, '-').toLowerCase().replace(':','').replace('/','') }`}>{anime.animeTitle}</Link>
+                         <Link className="btn btn-primary" to={`/anime-detail/${anime.animeTitle.replace(/\s+/g, '-').toLowerCase().replace(':','').replace('/','') }`}>See Detail</Link>
                         </div>
                 </div>
             </div>
