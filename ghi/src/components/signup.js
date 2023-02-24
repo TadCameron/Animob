@@ -3,7 +3,6 @@ import { useToken } from "./useToken";
 
 function BootstrapInput(props) {
     const {id, placeholder, labelText, value, onChange, type } = props;
-
     return (
         <div className="mb-4">
             <label htmlFor={id} className="form-label">{labelText}</label>
@@ -11,7 +10,6 @@ function BootstrapInput(props) {
         </div>
     );
 }
-
 function SignupForm() {
     const { signup } = useToken();
     const [username, setUsername] =  useState('');
@@ -23,20 +21,20 @@ async function handleSubmit(event) {
   event.preventDefault();
     signup(username, password, full_name, email)
     }
-
+    
     return (
     <div className="accountpagecontainer">
         <div className="card" >
         <form onSubmit={handleSubmit}>
-            <h5 class="card-title">Sign up</h5>
-             <BootstrapInput
+            <h5 className="card-title">Sign up</h5>
+            <BootstrapInput
                 id="name"
                 placeholder="name"
                 // labelText="name"
                 value={full_name}
                 onChange={e => setName(e.target.value)}
                 type="text" />
-             <BootstrapInput
+            <BootstrapInput
                 id="email"
                 placeholder="email"
                 // labelText="email"
@@ -57,12 +55,11 @@ async function handleSubmit(event) {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 type="password" />
-
             <button type="submit" className="btn btn-light">SUBMIT</button>
         </form>
         </div>
     </div>
     );
     }
-
     export default SignupForm
+
