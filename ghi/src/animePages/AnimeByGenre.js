@@ -9,7 +9,7 @@ function AnimeByGenre() {
     const { genre } = useParams();
 
 const getData = async () => {
-        const response = await fetch(`http://localhost:8000/api/genres/${genre}`);
+        const response = await fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/genres/${genre}`);
 
         if (response.ok) {
             let data = await response.json();
