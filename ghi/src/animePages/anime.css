@@ -1,4 +1,4 @@
-.container{
+#one{
   align-content: left;
   background-color: rgb(254, 151, 15);
   text-align: left;
@@ -7,5 +7,32 @@
 }
 
 body{
-    background-color: black;
+    background-color: black;;
+}
+
+.animegenrecontainer{
+  background-image: url("https://wallpaperaccess.com/full/114439.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.card{
+    margin-right: 10px;
+    border-color: black;
+    border-width: 2px;
+
+
+}
+h1{
+  text-align: center;
+  color: rgb(54, 59, 59);
+  padding-top: 20px;
+  padding-bottom: 0px;
 }

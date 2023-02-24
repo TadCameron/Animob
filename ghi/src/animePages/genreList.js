@@ -20,25 +20,26 @@ const getData = async () => {
     }, [])
 
      return (
-        <table className="table table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody>
+        <>
+        <div className="animegenrecontainer">
+            <h1 tag="genreheader">GENRES</h1>
+            <div className="row row-cols-2 row-cols-md-3 g-4">
                 {genres.map(genre => {
                     return (
-                        <tr key={genre}>
-                            <td>
-                                <Link to={`/genre/${genre}`}>{genre}</Link>
-                            </td>
-                        </tr>
+                        <div key={genre}>
+                            <div className="col d-flex">
+                                <div className="card">
+                                    <div className="card-body">
+                                    <h5 className="card-title"><Link to={`/genres/${genre}`}>{genre}</Link></h5>
+                                 </div>
+                            </div>
+                            </div>
+                        </div>
                     );
                 })}
-            </tbody>
-        </table>
+            </div>
+        </div>
+        </>
     );
 
 }

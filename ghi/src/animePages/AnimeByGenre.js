@@ -23,23 +23,23 @@ const getData = async () => {
     }, [])
 
 return (
-        <table className="table table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                {genreName.map(anime => {
-                    return (
-                        <tr key={anime.animeId}>
-                            <td>{anime.animeTitle}</td>
-                            <img src={anime.animeImg} alt="" />
-                        </tr>
-                    );
-                })}
-            </tbody>
-        </table>
+<table className="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+    {genreName.map(anime => {
+    return (
+        <tr key={anime.animeId}>
+          <td>{anime.animeTitle}</td>
+            <img src={anime.animeImg} alt="" />
+        </tr>
+      );
+       })}
+    </tbody>
+</table>
     );
 
 }

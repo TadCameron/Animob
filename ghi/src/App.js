@@ -29,7 +29,7 @@ function App() {
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/anime-detail/:animeTitle" element={<AnimeDetail />} />
             <Route path="/genres" element={<GenreList />} />
-            <Route path="/genre/:genre" element={<AnimeByGenre />} />
+            <Route path="/genreS/:genre" element={<AnimeByGenre />} />
           </Routes>
           <GetToken />
       </div>

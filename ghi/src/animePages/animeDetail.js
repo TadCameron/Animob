@@ -24,7 +24,7 @@ function AnimeDetail(props) {
 
 return (
   <>
-  <div className="container">
+  <div className="container" id="one">
     <div className="row">
       <div className="col-12 col-md-8">
         <hr class="my-4"></hr>
