@@ -1,3 +1,9 @@
+2/23/2023
+Did alot of front end simple pages today, Tad did most of the driving and made some really good simple pages to display our anime detail and also a genre page. Sara's been doing alot of CSS and making alot of things look nice and pretty. Things are going really well so far
+
+2/22/2023
+Finished front end authentication today. We basically just started from scratch today and by the end we finally got it. Now we're starting to make simple pages for our other end points. Things are going smoothly so far. Really surprised how fast we're running through this
+
 2/21/2023
 Started on front end authentication today, honestly pretty lost. Hard going back and looking at front after it's being so long. Hopefully we get it soon.
 
