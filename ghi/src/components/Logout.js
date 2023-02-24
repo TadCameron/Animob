@@ -9,8 +9,15 @@ function Logout() {
 
   return (
     <div>
-      <p>Are you sure you want to log out?</p>
-      <button onClick={handleLogout}>Log out</button>
+        <div className="accountpagecontainer">
+          <div className="card" >
+            <form onSubmit={handleLogout}>
+            <h5 className="card-title">LOGOUT</h5>
+            <p>Are you sure you want to log out?</p>
+            <button onClick={handleLogout}>Log out</button>
+            </form>
+          </div>
+        </div>
     </div>
   );
 }
