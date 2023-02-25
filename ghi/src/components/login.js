@@ -21,7 +21,6 @@ async function handleSubmit(event) {
   event.preventDefault();
     login(username, password)
     localStorage.setItem(token, 'tokenValue')
-    console.log('**********', token)
     }
 
   return (

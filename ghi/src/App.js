@@ -9,6 +9,7 @@ import SignupForm from './components/signup';
 import AnimeDetail from './animePages/animeDetail';
 import GenreList from './animePages/genreList';
 import AnimeByGenre from './animePages/AnimeByGenre';
+import Profile from './profile/profile';
 
 
 function GetToken() {
@@ -29,7 +30,8 @@ function App() {
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/anime-detail/:animeTitle" element={<AnimeDetail />} />
             <Route path="/genres" element={<GenreList />} />
-            <Route path="/genreS/:genre" element={<AnimeByGenre />} />
+            <Route path="/genres/:genre" element={<AnimeByGenre />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
           <GetToken />
       </div>
