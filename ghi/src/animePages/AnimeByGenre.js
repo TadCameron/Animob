@@ -5,8 +5,6 @@ import { useParams } from "react-router-dom";
 
 function AnimeByGenre() {
     const [ genreName, setGenre] = useState([])
-
-
     const { genre } = useParams();
 
 const getData = async () => {

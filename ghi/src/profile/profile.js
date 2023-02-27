@@ -13,7 +13,7 @@ function Profile() {
 
         if (response.ok) {
             const data = await response.json();
-            setFavorites(data);
+            setFavorites(data.favorites);
             console.log(data)
         }
     }
