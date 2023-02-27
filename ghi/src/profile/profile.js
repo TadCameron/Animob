@@ -7,11 +7,14 @@ function Profile() {
     const { token } = useAuthContext();
 
     const getData = async () => {
-        const response = await fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites/`);
+        const response = await fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites/`, {
+        credentials: "include",
+      });
 
         if (response.ok) {
             const data = await response.json();
             setFavorites(data);
+            console.log(data)
         }
     }
 
