@@ -1,7 +1,16 @@
 import { useEffect, useState, } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import FavoritesIcon from "./favoritesIcon";
 
+async function addToFavorites(animeId, animeImg, animeTitle) {
+    // setFavorites([...favorites, { animeId, accountId }]);
+    const URL = (`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites`);
+    const favResponse = await fetch(URL, {method: 'POST', headers: {credentials: 'include', 'Content-Type': 'application/json'}, body: JSON.stringify({animeId, animeTitle, animeImg
+    })});
+
+
+}
 
 function AnimeByGenre() {
     const [ genreName, setGenre] = useState([])
@@ -35,6 +44,7 @@ return (
                         <div className="card-body">
                          <h5 className="card-title">{anime.animeTitle}</h5>
                          <Link className="btn btn-primary" to={`/anime-detail/${anime.animeId}`}>See Details</Link>
+                         <FavoritesIcon animeId={anime.animeId} animeTitle={anime.animeTitle} animeImg={anime.animeImg} favorites= {false} />
                         </div>
                 </div>
             </div>
