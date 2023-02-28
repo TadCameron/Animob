@@ -14,7 +14,6 @@ function Profile() {
         if (response.ok) {
             const data = await response.json();
             setFavorites(data.favorites);
-            console.log(data.favorites)
         }
     }
 
@@ -22,7 +21,7 @@ function Profile() {
         getData()
     }, [])
 
-    
+
 
 
 return (

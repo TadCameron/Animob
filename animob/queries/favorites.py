@@ -7,7 +7,6 @@ class FavoritesIn(BaseModel):
     animeId: str
     animeTitle: str
     animeImg: str
-    animeId: str
 
 
 class FavoritesOut(FavoritesIn):

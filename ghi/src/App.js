@@ -10,14 +10,32 @@ import AnimeDetail from './animePages/animeDetail';
 import GenreList from './animePages/genreList';
 import AnimeByGenre from './animePages/AnimeByGenre';
 import Profile from './profile/profile';
-
+import { useEffect, useState } from 'react';
 
 function GetToken() {
   const { token } = useAuthContext();
     return null
 }
 
-function App() {
+
+function App(){
+    const [favorites, setFavorites] = useState([]);
+    const getData = async () => {
+        const response = await fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites/`, {
+        credentials: "include",
+      });
+
+        if (response.ok) {
+            const data = await response.json();
+            setFavorites(data.favorites);
+
+        }
+    }
+
+        useEffect(() => {
+        getData()
+    }, [])
+
   return (
     <BrowserRouter>
     <AuthProvider>
@@ -30,8 +48,8 @@ function App() {
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/anime-detail/:animeTitle" element={<AnimeDetail />} />
             <Route path="/genres" element={<GenreList />} />
-            <Route path="/genres/:genre" element={<AnimeByGenre />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/genres/:genre" element={<AnimeByGenre favorites={favorites}/>} />
+            <Route path="/profile" element={<Profile favorites={favorites}  />} />
           </Routes>
           <GetToken />
       </div>
@@ -41,3 +59,5 @@ function App() {
 }
 
 export default App;
+
+// fetch req for favorites in app.js to send to profile and anime by genre

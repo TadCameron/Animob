@@ -2,8 +2,9 @@ import { useEffect, useState, } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../components/useToken";
+import FavoritesIcon from "./favoritesIcon";
 
-function AnimeByGenre() {
+function AnimeByGenre(props) {
   const [genreName, setGenre] = useState([]);
   const { genre } = useParams();
 
@@ -14,7 +15,6 @@ function AnimeByGenre() {
 
     if (response.ok) {
       let data = await response.json();
-      console.log(data);
       setGenre(data);
     }
   };
@@ -59,9 +59,8 @@ function AnimeByGenre() {
                       <Link className="btn btn-primary" to={`/anime-detail/${anime.animeId}`}>
                         See Details
                       </Link>
-                      <button className="btn btn-primary" onClick={() => addToFavorites(anime)}>
-                        +
-                      </button>
+                      <FavoritesIcon className="btn btn-primary" onClick={()=>addToFavorites} favorites={props.favorites} animeId={anime.animeId} />
+
                     </div>
                   </div>
                 </div>
