@@ -6,6 +6,7 @@ from bson.objectid import ObjectId
 class FavoritesIn(BaseModel):
     animeTitle: str
     animeImg: str
+    animeId: str
 
 
 class FavoritesOut(FavoritesIn):

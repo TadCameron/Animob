@@ -17,10 +17,16 @@ function MainPage() {
                 <div className="row">
                   <div className="col-md-12 mb-4 white-text text-center">
                     <h1 className="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" data-wow-delay="0.3s"><strong>ANIMOB</strong></h1>
+                    {token ? (
                     <div className="text-center p-2">
+                      <NavLink to="/profile" className="btn btn-outline-white text-white wow fadeInDown">Profile</NavLink>
+                      </div>
+                    ) : (
+                      <div className="text-center p-2">
                         <NavLink to="/login" className="btn btn-outline-white text-white wow fadeInDown">Login</NavLink>
                         <NavLink to="/signup" className="btn btn-outline-white text-white wow fadeInDown">Signup</NavLink>
                     </div>
+                    )}
                     <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s"></hr>
                   </div>
                 </div>
@@ -33,3 +39,5 @@ function MainPage() {
 }
 
 export default MainPage;
+
+
