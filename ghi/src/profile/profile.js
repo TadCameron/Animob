@@ -14,13 +14,15 @@ function Profile() {
         if (response.ok) {
             const data = await response.json();
             setFavorites(data.favorites);
-            console.log(data)
+            console.log(data.favorites)
         }
     }
 
         useEffect(() => {
         getData()
     }, [])
+
+    
 
 
 return (
