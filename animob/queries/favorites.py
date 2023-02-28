@@ -4,6 +4,7 @@ from bson.objectid import ObjectId
 
 
 class FavoritesIn(BaseModel):
+    animeId: str
     animeTitle: str
     animeImg: str
     animeId: str
