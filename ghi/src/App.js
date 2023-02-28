@@ -48,7 +48,7 @@ function App(){
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/anime-detail/:animeTitle" element={<AnimeDetail />} />
             <Route path="/genres" element={<GenreList />} />
-            <Route path="/genres/:genre" element={<AnimeByGenre favorites={favorites}/>} />
+            <Route path="/genres/:genre" element={<AnimeByGenre getData={getData} favorites={favorites}/>} />
             <Route path="/profile" element={<Profile favorites={favorites}  />} />
           </Routes>
           <GetToken />
