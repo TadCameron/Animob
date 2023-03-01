@@ -40,6 +40,7 @@ function FavoritesIcon(props) {
       });
       if (favResponse.ok) {
         setFavorites(true);
+        setFound(true)
         alert(`Added to favorites!`);
       } else {
         alert(`Failed to add to favorites.`);
@@ -62,6 +63,7 @@ function FavoritesIcon(props) {
       });
       if (favResponse.ok) {
         alert(`Removed from favorites!`);
+        setFound(false);
         props.getData();
       }
     }
