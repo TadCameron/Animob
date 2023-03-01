@@ -59,7 +59,9 @@ function FavoritesIcon(props) {
         credentials: "include",
       });
       if (favResponse.ok) {
+        alert(`Added to favorites!`);
         props.getData();
+
       }
     }
   }

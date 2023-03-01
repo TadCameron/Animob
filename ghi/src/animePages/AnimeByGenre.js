@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../components/useToken";
 import FavoritesIcon from "./favoritesIcon";
+import DeleteIcon from "./deleteIcon";
 
 function AnimeByGenre(props) {
   const [genreName, setGenre] = useState([]);
