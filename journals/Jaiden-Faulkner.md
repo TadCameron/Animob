@@ -1,3 +1,9 @@
+2/28/2023
+Been working ALL day on creating the add a favorite and delete a favorite functionality for the front end. I feel like we're getting close, but jesus this is hard or harder than the authenctication stuff.
+
+2/27/2023
+Our anime api hasn't been working and it turns out its because the guy who runs doesn't make enough money or something. Thought we were going to have to redo alot of stuff or change our project. Tyler came in clutch and hosted the data from that database on his git lab. So we got it back to functioning thank god.
+
 2/23/2023
 Did alot of front end simple pages today, Tad did most of the driving and made some really good simple pages to display our anime detail and also a genre page. Sara's been doing alot of CSS and making alot of things look nice and pretty. Things are going really well so far
 
