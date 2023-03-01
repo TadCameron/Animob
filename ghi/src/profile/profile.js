@@ -1,8 +1,10 @@
 import { useEffect, useState, } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../components/useToken";
+import FavoritesIcon from "../animePages/favoritesIcon";
 
-function Profile() {
+
+function Profile(props) {
     const [favorites, setFavorites] = useState([]);
     const { token } = useAuthContext();
 
@@ -37,6 +39,14 @@ return (
                                 <div className="card-body">
                                 <h5 className="card-title">{anime.animeTitle}</h5>
                                 <Link className="btn btn-primary" to={`/anime-detail/${anime.animeId}`}>See Details</Link>
+                                <FavoritesIcon
+                                    className="btn btn-primary"
+                                    getData={props.getData}
+                                    favorites={props.favorites}
+                                    animeId={anime.animeId}
+                                    animeTitle={anime.animeTitle}
+                                    animeImg={anime.animeImg}
+                      />
                                 </div>
                         </div>
                     </div>

@@ -8,12 +8,10 @@ function FavoritesIcon(props) {
   const [animeImg, setAnimeImg] = useState(props.animeImg);
   const [found, setFound] = useState(false);
   const { token } = useToken();
-  // console.log(props)
 
   function PlusMinusButton() {
     for (const anime of props.favorites) {
-      // console.log(anime)
-      // console.log(animeId)
+
       if (anime["animeId"] === animeId) {
         setFound(true);
         break;
@@ -62,19 +60,6 @@ function FavoritesIcon(props) {
       });
       if (favResponse.ok) {
         props.getData();
-        console.log("WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-        // const data = await favResponse.json();
-        // for (let i = 0; i < data.length; i++) {
-        //     if (data[i]['animeId'] === animeId) {
-        //         const favId = data[i]['favoriteId'];
-        //         const URL = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites/${favId}`;
-        //         const response = await fetch(URL, {
-        //             method: "DELETE",
-        //             headers: { Authorization: `Bearer ${token}` },
-        //             credentials: "include",
-        //         });
-        //         if (response.ok) {
-        //             setFavorites(false);
       }
     }
   }
