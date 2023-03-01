@@ -10,31 +10,29 @@ function DeleteIcon(props) {
   const { token } = useToken();
 
   function MinusButton() {
-
-      return <p>-</p>;
-
+    return <p>-</p>;
   }
 
   async function removeFromFavorites() {
-      let favId = "";
-      for (const anime of props.favorites) {
-        if (anime["animeId"] === animeId) {
-          favId = anime["id"];
-          break;
-        }
+    let favId = "";
+    for (const anime of props.favorites) {
+      if (anime["animeId"] === animeId) {
+        favId = anime["id"];
+        break;
       }
-      const URL = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites/${favId}`;
-      const favResponse = await fetch(URL, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        credentials: "include",
-      });
-      if (favResponse.ok) {
-        props.getData();
-      }
-
+    }
+    const URL = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites/${favId}`;
+    const favResponse = await fetch(URL, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      credentials: "include",
+    });
+    if (favResponse.ok) {
+      alert(`Removed from favorites!`);
+      props.getData();
+    }
   }
 
   return (
