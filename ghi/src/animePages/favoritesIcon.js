@@ -30,15 +30,16 @@ function FavoritesIcon(props) {
     if (found === false) {
       const URL = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites`;
       console.log(token)
+      console.log({props})
       const favResponse = await fetch(URL, {
         method: "POST",
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({
           animeId: props.animeId,
           animeTitle: props.animeTitle,
           animeImg: props.animeImg,
         }),
-        // credentials: "include",
+        credentials: "include",
       });
       if (favResponse.ok) {
         setFavorites(true);
