@@ -8,12 +8,9 @@ function FavoritesIcon(props) {
   const [animeImg, setAnimeImg] = useState(props.animeImg);
   const [found, setFound] = useState(false);
   const { token } = useToken();
-  // console.log(props)
 
   function PlusMinusButton() {
     for (const anime of props.favorites) {
-      // console.log(anime)
-      // console.log(animeId)
       if (anime["animeId"] === animeId) {
         setFound(true);
         break;
@@ -29,11 +26,11 @@ function FavoritesIcon(props) {
   async function addToFavorites() {
     if (found === false) {
       const URL = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites`;
-      console.log(token)
-      console.log({props})
+      console.log(token);
+      console.log({ props });
       const favResponse = await fetch(URL, {
         method: "POST",
-        headers: { 'Content-Type': 'application/json'},
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           animeId: props.animeId,
           animeTitle: props.animeTitle,
@@ -43,6 +40,10 @@ function FavoritesIcon(props) {
       });
       if (favResponse.ok) {
         setFavorites(true);
+        setFound(true)
+        alert(`Added to favorites!`);
+      } else {
+        alert(`Failed to add to favorites.`);
       }
     } else {
       let favId = "";
@@ -61,20 +62,9 @@ function FavoritesIcon(props) {
         credentials: "include",
       });
       if (favResponse.ok) {
+        alert(`Removed from favorites!`);
+        setFound(false);
         props.getData();
-        console.log("WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-        // const data = await favResponse.json();
-        // for (let i = 0; i < data.length; i++) {
-        //     if (data[i]['animeId'] === animeId) {
-        //         const favId = data[i]['favoriteId'];
-        //         const URL = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites/${favId}`;
-        //         const response = await fetch(URL, {
-        //             method: "DELETE",
-        //             headers: { Authorization: `Bearer ${token}` },
-        //             credentials: "include",
-        //         });
-        //         if (response.ok) {
-        //             setFavorites(false);
       }
     }
   }

@@ -1,8 +1,11 @@
 import { useEffect, useState, } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../components/useToken";
+import FavoritesIcon from "../animePages/favoritesIcon";
+import DeleteIcon from "../animePages/deleteIcon";
 
-function Profile() {
+
+function Profile(props) {
     const [favorites, setFavorites] = useState([]);
     const { token } = useAuthContext();
 
