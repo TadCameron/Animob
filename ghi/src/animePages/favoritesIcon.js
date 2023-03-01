@@ -11,7 +11,6 @@ function FavoritesIcon(props) {
 
   function PlusMinusButton() {
     for (const anime of props.favorites) {
-
       if (anime["animeId"] === animeId) {
         setFound(true);
         break;
@@ -27,11 +26,11 @@ function FavoritesIcon(props) {
   async function addToFavorites() {
     if (found === false) {
       const URL = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites`;
-      console.log(token)
-      console.log({props})
+      console.log(token);
+      console.log({ props });
       const favResponse = await fetch(URL, {
         method: "POST",
-        headers: { 'Content-Type': 'application/json'},
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           animeId: props.animeId,
           animeTitle: props.animeTitle,
@@ -41,6 +40,9 @@ function FavoritesIcon(props) {
       });
       if (favResponse.ok) {
         setFavorites(true);
+        alert(`Added to favorites!`);
+      } else {
+        alert(`Failed to add to favorites.`);
       }
     } else {
       let favId = "";
@@ -59,9 +61,8 @@ function FavoritesIcon(props) {
         credentials: "include",
       });
       if (favResponse.ok) {
-        alert(`Added to favorites!`);
+        alert(`Removed from favorites!`);
         props.getData();
-
       }
     }
   }
