@@ -116,6 +116,7 @@ function Profile(props) {
     <>
       <div className="mainpagecontainer">
         <div className="d-flex flex-column">
+          <div>Hi</div>
           <Carousel
             swipeable={false}
             draggable={false}
@@ -129,7 +130,7 @@ function Profile(props) {
             customTransition="all .5"
             transitionDuration={500}
             containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
+            // removeArrowOnDeviceType={["tablet", "mobile"]}
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
           >
@@ -149,7 +150,7 @@ function Profile(props) {
             customTransition="all .5"
             transitionDuration={500}
             containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
+            // removeArrowOnDeviceType={["tablet", "mobile"]}
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
           >
