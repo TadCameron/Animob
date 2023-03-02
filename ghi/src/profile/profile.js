@@ -93,8 +93,8 @@ function Profile(props) {
           </div>
         </div>
       </div>
-    )
-  })
+    );
+  });
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -115,8 +115,7 @@ function Profile(props) {
   return (
     <>
       <div className="mainpagecontainer">
-        <div className="row">
-          <div className="col">
+        <div className="d-flex flex-column">
           <Carousel
             swipeable={false}
             draggable={false}
@@ -136,12 +135,7 @@ function Profile(props) {
           >
             {favCarousel}
           </Carousel>
-          </div>
-        </div>
-      </div>
 
-        <div className="row">
-          <div className="col">
           <Carousel
             swipeable={false}
             draggable={false}
