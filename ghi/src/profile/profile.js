@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../components/useToken";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
 import FavoritesIcon from "../animePages/favoritesIcon";
 import DeleteIcon from "../animePages/deleteIcon";
 
 function Profile(props) {
   const [favorites, setFavorites] = useState([]);
+  const [recommended, setRecommended] = useState([]);
+
   const { token } = useAuthContext();
 
   const getData = async () => {
@@ -23,8 +26,23 @@ function Profile(props) {
       setFavorites(data.favorites);
     }
   };
+  const getRecommended = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/popular`,
+      {
+        credentials: "include",
+      }
+    );
 
+    if (res.ok) {
+      const data1 = await res.json();
+      console.log(data1);
+      setRecommended(data1.recommended);
+      console.log(recommended);
+    }
+  };
   useEffect(() => {
+    getRecommended();
     getData();
   }, []);
 
@@ -53,6 +71,31 @@ function Profile(props) {
       </div>
     );
   });
+  let recCarousel = recommended.map(function (anime) {
+    return (
+      <div key={anime.animeId}>
+        <div className="col d-flex justify-content-center">
+          <div className="card" id="animecard">
+            <img
+              src={anime.animeImg}
+              className="card-img-top"
+              alt=""
+              id="animeimage"
+            ></img>
+            <div className="card-body">
+              <h5 className="card-title">{anime.animeTitle}</h5>
+              <Link
+                className="btn btn-primary"
+                to={`/anime-detail/${anime.animeId}`}
+              >
+                See Details
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  })
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -78,7 +121,7 @@ function Profile(props) {
           draggable={false}
           showDots={true}
           responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
+          ssr={true}
           infinite={true}
           autoPlay={false}
           autoPlaySpeed={1000}
@@ -87,11 +130,31 @@ function Profile(props) {
           transitionDuration={500}
           containerClass="carousel-container"
           removeArrowOnDeviceType={["tablet", "mobile"]}
-          //   deviceType={this.props.deviceType}
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"
         >
           {favCarousel}
+        </Carousel>
+      </div>
+      <div className="mainpagecontainer">
+        <Carousel
+          swipeable={false}
+          draggable={false}
+          showDots={true}
+          responsive={responsive}
+          ssr={true}
+          infinite={true}
+          autoPlay={false}
+          autoPlaySpeed={1000}
+          keyBoardControl={true}
+          customTransition="all .5"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+        >
+          {recCarousel}
         </Carousel>
         ;
       </div>

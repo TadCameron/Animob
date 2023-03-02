@@ -30,6 +30,8 @@ code {
   position: fixed;
   width: 100vw;
   left: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .otherpagescontainer {
