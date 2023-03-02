@@ -5,7 +5,7 @@ import { useAuthContext } from "./components/useToken";
 
 function MainPage() {
   const { token } = useAuthContext()
-  console.log("****", token)
+
   return (
     <>
 
@@ -39,5 +39,3 @@ function MainPage() {
 }
 
 export default MainPage;
-
-

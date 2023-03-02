@@ -70,7 +70,7 @@ function FavoritesIcon(props) {
   }
 
   return (
-    <button onClick={addToFavorites}>
+    <button onClick={addToFavorites} id="plusminus">
       <PlusMinusButton />
     </button>
   );

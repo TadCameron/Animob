@@ -74,3 +74,9 @@ a{
   padding-top: 20px;
 
 }
+#plusminus{
+  background-color: transparent;
+  border-color: transparent;
+  font-size: larger;
+
+}

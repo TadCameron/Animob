@@ -27,26 +27,6 @@ function AnimeByGenre(props) {
     getData();
   }, []);
 
-  // const addToFavorites = async (anime) => {
-  //   const response = await fetch(`${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     credentials: 'include',
-  //     body: JSON.stringify({
-  //       animeTitle: anime.animeTitle,
-  //       animeImg: anime.animeImg,
-  //       animeId: anime.animeId
-  //     })
-  //   });
-
-  //   if (response.ok) {
-  //     alert(`Added ${anime.animeTitle} to favorites!`);
-  //   } else {
-  //     alert(`Failed to add ${anime.animeTitle} to favorites.`);
-  //   }
-  // };
 
   return (
     <>
