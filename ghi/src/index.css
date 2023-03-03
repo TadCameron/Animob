@@ -1,28 +1,26 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
 
 #main-view {
   position: absolute;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
 
-  .mainpagecontainer {
-  background-image: url('https://pbs.twimg.com/media/FhTgQvuXEAQ0wNE.jpg:large');
+.mainpagecontainer {
+  background-image: url("https://pbs.twimg.com/media/FhTgQvuXEAQ0wNE.jpg:large");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,6 +42,6 @@ code {
   width: 100vw;
   left: 0;
 }
-.nav-item{
+.nav-item {
   justify-content: right;
 }

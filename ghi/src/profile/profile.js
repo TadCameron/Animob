@@ -48,7 +48,7 @@ function Profile(props) {
   let favCarousel = favorites.map(function (anime) {
     return (
       <div key={anime.animeId}>
-        <div className="col d-flex justify-content-center">
+        <div className="col-lg-3 col-md-4 col-sm-6">
           <div className="card" id="profilecard">
             <img
               src={anime.animeImg}
