@@ -80,3 +80,13 @@ a{
   font-size: larger;
 
 }
+#profileheader{
+  color: rgb(236, 7, 7);
+  text-align: center;
+  padding-top: 50px;
+  background-color: azure;
+  font-size: 40px;
+  margin-top: 10px;
+
+
+}

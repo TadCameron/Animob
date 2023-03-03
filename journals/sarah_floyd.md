@@ -1,3 +1,11 @@
+Mar 2- Today I made a second carousel to go underneath the one I made yesterday.
+
+Mar 1- .....I spent 7 hours trying to make a carousel. Justin ended up helping me and we got it done in 30 minutes.
+
+Feb 28-
+
+Feb 27- The owner of the API we were using decided he didn't want to host it anymore, so we spend a few hours looking for a new one and deciding whether or not we wanted to start a new project or find a new API. Luckily Tyler came to the rescue to show us how we could host the API ourselves.
+
 Feb 23- Today we got most out our anime routes in React done. Tad and Row did most of the driving and did great. Jaiden and I worked togther to start adding a little style to our pages.
 
 Feb 22- Today we all worked together again and decided against using Redux and to just stick with React. This worked out much more easily. We had the front end auth done within a few hours.

@@ -116,7 +116,7 @@ function Profile(props) {
     <>
       <div className="mainpagecontainer">
         <div className="d-flex flex-column">
-          <div>Hi</div>
+          <div id="profileheader">MY FAVORITES</div>
           <Carousel
             swipeable={false}
             draggable={false}
@@ -137,6 +137,7 @@ function Profile(props) {
             {favCarousel}
           </Carousel>
 
+          <div id="profileheader">RECOMMENDED</div>
           <Carousel
             swipeable={false}
             draggable={false}
