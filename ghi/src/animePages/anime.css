@@ -1,11 +1,7 @@
 #one {
-  align-content: left;
   background-color: rgb(254, 151, 15);
-  text-align: left;
-  padding-right: 100px;
-  padding-left: 100px;
+  width: 100%;
 }
-
 body {
   background-color: black;
 }
@@ -98,6 +94,5 @@ a {
   background-color: azure;
   font-size: 40px;
   margin-top: 10px;
-
 
 }
