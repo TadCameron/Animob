@@ -1,11 +1,7 @@
 #one {
-  align-content: left;
   background-color: rgb(254, 151, 15);
-  text-align: left;
-  padding-right: 100px;
-  padding-left: 100px;
+  width: 100%;
 }
-
 body {
   background-color: black;
 }
@@ -90,4 +86,13 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 200px;
+}
+#profileheader{
+  color: rgb(236, 7, 7);
+  text-align: center;
+  padding-top: 50px;
+  background-color: azure;
+  font-size: 40px;
+  margin-top: 10px;
+
 }
