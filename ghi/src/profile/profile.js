@@ -49,7 +49,7 @@ function Profile(props) {
     return (
       <div key={anime.animeId}>
         <div className="col d-flex justify-content-center">
-          <div className="card" id="animecard">
+          <div className="card" id="profilecard">
             <img
               src={anime.animeImg}
               className="card-img-top"
@@ -57,7 +57,7 @@ function Profile(props) {
               id="animeimage"
             ></img>
             <div className="card-body">
-              <h5 className="card-title">{anime.animeTitle}</h5>
+              <h5 className="card-title">{anime.animeTitle.slice(0, 20)}</h5>
               <Link
                 className="btn btn-primary"
                 to={`/anime-detail/${anime.animeId}`}
@@ -74,7 +74,7 @@ function Profile(props) {
     return (
       <div key={anime.animeId}>
         <div className="col d-flex justify-content-center">
-          <div className="card" id="animecard">
+          <div className="card" id="profilecard">
             <img
               src={anime.animeImg}
               className="card-img-top"
@@ -82,7 +82,7 @@ function Profile(props) {
               id="animeimage"
             ></img>
             <div className="card-body">
-              <h5 className="card-title">{anime.animeTitle}</h5>
+              <h5 className="card-title">{anime.animeTitle.slice(0, 20)}</h5>
               <Link
                 className="btn btn-primary"
                 to={`/anime-detail/${anime.animeId}`}
