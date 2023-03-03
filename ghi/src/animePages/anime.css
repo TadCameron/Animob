@@ -1,7 +1,3 @@
-#one {
-  background-color: rgb(254, 151, 15);
-  width: 100%;
-}
 body {
   background-color: black;
 }
@@ -95,4 +91,29 @@ a {
   font-size: 40px;
   margin-top: 10px;
 
+}
+#maincontent{
+ position: fixed;
+ left: 0;
+ background-color: aliceblue;
+ text-align: center;
+
+}
+
+#sidebar{
+  background-color: rgba(165, 11, 11, 0.997);
+  padding-right: auto;
+  position:absolute;
+  right:0;
+  display: block;
+  padding-right: 170px;
+
+
+
+}
+#airing{
+  color: rgb(255, 255, 255);
+  font-size: 60px;
+  display: block;
+  padding-left: 140px;
 }
