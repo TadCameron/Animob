@@ -3,27 +3,6 @@ import { useState, useEffect } from "react";
 import "./accounts.css";
 import anime from "animejs";
 
-
-// function BootstrapInput(props) {
-//   const { id, placeholder, labelText, value, onChange, type } = props;
-
-//   return (
-//     <div classNameName="mb-4">
-//       <label htmlFor={id} classNameName="form-label">
-//         {labelText}
-//       </label>
-//       <input
-//         value={value}
-//         onChange={onChange}
-//         required
-//         type={type}
-//         classNameName="form-control"
-//         id={id}
-//         placeholder={placeholder}
-//       ></input>
-//     </div>
-//   );
-// }
 function Login() {
   const { token, login } = useToken();
   const [username, setUsername] = useState("");
@@ -32,61 +11,10 @@ function Login() {
   async function handleSubmit(event) {
     event.preventDefault();
     login(username, password);
-
   }
 
-  // useEffect(() => {
-  //   var current = null;
-  //   document.querySelector("#username").addEventListener("focus", function (e) {
-  //     if (current) {current.pause()};
-  //     current = anime({
-  //       targets: "path",
-  //       strokeDashoffset: {
-  //         value: 0,
-  //         duration: 700,
-  //         easing: "easeOutQuart",
-  //       },
-  //       strokeDasharray: {
-  //         value: "240 1386",
-  //         duration: 700,
-  //         easing: "easeOutQuart",
-  //       },
-  //     });
-  //   });
-  //   document.querySelector("#password").addEventListener("focus", function (e) {
-  //     if (current) current.pause();
-  //     current = anime({
-  //       targets: "path",
-  //       strokeDashoffset: {
-  //         value: -336,
-  //         duration: 700,
-  //         easing: "easeOutQuart",
-  //       },
-  //       strokeDasharray: {
-  //         value: "240 1386",
-  //         duration: 700,
-  //         easing: "easeOutQuart",
-  //       },
-  //     });
-  //   });
-  //   document.querySelector("#submit").addEventListener("focus", function (e) {
-  //     if (current) current.pause();
-  //     current = anime({
-  //       targets: "path",
-  //       strokeDashoffset: {
-  //         value: -730,
-  //         duration: 700,
-  //         easing: "easeOutQuart",
-  //       },
-  //       strokeDasharray: {
-  //         value: "530 1386",
-  //         duration: 700,
-  //         easing: "easeOutQuart",
-  //       },
-  //     });
-  //   });
-  // });
-    useEffect(() => {
+
+  useEffect(() => {
     var current = null;
     const username = document.querySelector("#username");
     const password = document.querySelector("#password");
@@ -160,8 +88,6 @@ function Login() {
     };
   }, []);
 
-
-
   return (
     <div className="page">
       <div className="container">
@@ -199,29 +125,27 @@ function Login() {
             <path d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
           </svg>
 
-            <form className="form" onSubmit={handleSubmit}>
-             
-              <label htmlFor="username">Username</label>
-              <input
-                type="username"
-                id="username"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <button id="submit" type="submit" className="btn btn-light">
-                LOG IN
-              </button>
-            </form>
+          <form className="form" onSubmit={handleSubmit}>
+            <label htmlFor="username">Username</label>
+            <input
+              type="username"
+              id="username"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <input id="submit" type="submit">
 
+            </input>
+          </form>
         </div>
       </div>
     </div>

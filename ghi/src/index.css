@@ -42,10 +42,7 @@ code {
   width: 100vw;
   left: 0;
 }
-.nav-item {
-  justify-content: right;
-}
 
 #navcolor {
-  background-color: #cc0000;
+  background-color: #353535;
 }
