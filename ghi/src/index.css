@@ -47,6 +47,54 @@ code {
   background-color: #353535;
 }
 
-#headercontainer{
-  align-items: center;
+.logoutcontainer {
+  background-image: url("Images/wallpapersden.com_hunter-x-hunter-minimal-art_4000x3000.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100vw;
+  left: 0;
+}
+
+@font-face {
+  font-family: "AniMob Font";
+  src: url("fonts/Akira\ Expanded\ Demo.otf");
+}
+
+@font-face {
+  font-family: "MyFont Bold";
+  src: url("fonts/Comfortaa-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "MyFont Regular";
+  src: url("fonts/Comfortaa-Regular.ttf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "MyFont Light";
+  src: url("fonts/Comfortaa-Light.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+#cardtitles {
+  font-family: "MyFont Bold", Arial, sans-serif;
+}
+
+#websitefont {
+  font-family: "MyFont Regular", Arial, sans-serif;
+}
+
+#animob {
+  font-family: "AniMob Font", Arial, sans-serif;
+}
+
+#navfont {
+  font-family: "MyFont Bold", Arial, sans-serif;
+  text-align: center;
 }

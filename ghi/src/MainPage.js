@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./index.css";
 import { useAuthContext } from "./components/useToken";
 import Carousel from "react-multi-carousel";
+import { Link } from "react-router-dom";
 
 function MainPage() {
   const { token } = useAuthContext();
@@ -39,7 +40,8 @@ function MainPage() {
               <div className="row">
                 <div className="col white-text text-center">
                   <h1
-                    className="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
+                    className="h1-reponsive mb-0 pt-md-5 pt-5 wow fadeInDown"
+                    id="animob"
                     data-wow-delay="0.3s"
                   >
                     <strong>ANIMOB</strong>
@@ -49,6 +51,7 @@ function MainPage() {
                       <NavLink
                         to="/profile"
                         className="btn btn-outline-white text-white wow fadeInDown"
+                        id="websitefont"
                       >
                         Profile
                       </NavLink>
@@ -58,12 +61,14 @@ function MainPage() {
                       <NavLink
                         to="/login"
                         className="btn btn-outline-white text-white wow fadeInDown"
+                        id="websitefont"
                       >
                         Login
                       </NavLink>
                       <NavLink
                         to="/signup"
                         className="btn btn-outline-white text-white wow fadeInDown"
+                        id="websitefont"
                       >
                         Signup
                       </NavLink>
@@ -106,91 +111,138 @@ function MainPage() {
                   id="animeimage"
                 ></img>
                 <div className="card-body">
-                  <h5 className="card-title">Naruto</h5>
-                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                  <h5 className="card-title" id="cardtitles">
+                    Naruto
+                  </h5>
+                  <Link className="btn btn-dark" to={"/anime-detail/naruto"}>
                     See Details
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
             <div>
               <div className="card" id="editcard">
                 <img
-                  src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  src="https://gogocdn.net/images/summer/Tokyo%20Ghoul.jpg"
                   className="card-img-top"
                   alt=""
                   id="animeimage"
                 ></img>
                 <div className="card-body">
-                  <h5 className="card-title">Toyko Ghoul</h5>
-                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                  <h5 className="card-title" id="cardtitles">
+                    Toyko Ghoul
+                  </h5>
+                  <Link
+                    className="btn btn-dark"
+                    to={"/anime-detail/tokyo-ghoul"}
+                  >
                     See Details
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
             <div>
               <div className="card" id="editcard">
                 <img
-                  src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  src="https://gogocdn.net/cover/jujutsu-kaisen-tv.png"
                   className="card-img-top"
                   alt=""
                   id="animeimage"
                 ></img>
                 <div className="card-body">
-                  <h5 className="card-title">Jujutsu Kaisen</h5>
-                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                  <h5 className="card-title" id="cardtitles">
+                    Jujutsu Kaisen
+                  </h5>
+                  <Link
+                    className="btn btn-dark"
+                    to={"/anime-detail/jujutsu-kaisen-tv-dub"}
+                  >
                     See Details
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
             <div>
               <div className="card" id="editcard">
                 <img
-                  src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  src="https://gogocdn.net/cover/chainsaw-man.png"
                   className="card-img-top"
                   alt=""
                   id="animeimage"
                 ></img>
                 <div className="card-body">
-                  <h5 className="card-title">Attack on Titan</h5>
-                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                  <h5 className="card-title" id="cardtitles">
+                    Chainsaw Man
+                  </h5>
+                  <Link
+                    className="btn btn-dark"
+                    to={"/anime-detail/chainsaw-man"}
+                  >
                     See Details
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
             <div>
               <div className="card" id="editcard">
                 <img
-                  src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  src="https://gogocdn.net/cover/black-clover-tv-dub.png"
                   className="card-img-top"
                   alt=""
                   id="animeimage"
                 ></img>
                 <div className="card-body">
-                  <h5 className="card-title">Black Clover</h5>
-                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                  <h5 className="card-title" id="cardtitles">
+                    Black Clover
+                  </h5>
+                  <Link
+                    className="btn btn-dark"
+                    to={"/anime-detail/black-clover-tv-dub"}
+                  >
                     See Details
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
             <div>
               <div className="card" id="editcard">
                 <img
-                  src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  src="https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/cbb55a6382682bf71e91f685c6473c5a.jpe"
                   className="card-img-top"
                   alt=""
                   id="animeimage"
                 ></img>
                 <div className="card-body">
-                  <h5 className="card-title">Hunter x Hunter</h5>
-                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                  <h5 className="card-title" id="cardtitles">
+                    Hunter x Hunter
+                  </h5>
+                  <Link
+                    className="btn btn-dark"
+                    to={"/anime-detail/hunter-x-hunter-2011-dub"}
+                  >
                     See Details
-                  </div>
+                  </Link>
                 </div>
+              </div>
+            </div>
+            <div className="card" id="editcard">
+              <img
+                src="https://gogocdn.net/cover/kimetsu-no-yaiba.png"
+                className="card-img-top"
+                alt=""
+                id="animeimage"
+              ></img>
+              <div className="card-body">
+                <h5 className="card-title" id="cardtitles">
+                  Demon Slayer
+                </h5>
+                <Link
+                  className="btn btn-dark"
+                  id="websitefont"
+                  to={"/anime-detail/kimetsu-no-yaiba"}
+                >
+                  See Details
+                </Link>
               </div>
             </div>
           </Carousel>

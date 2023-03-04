@@ -26,17 +26,17 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/profile">
+              <NavLink className="nav-link" id="cardtitles" to="/profile">
                 PROFILE
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/genres">
+              <NavLink className="nav-link" id="cardtitles" to="/genres">
                 DISCOVER
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/logout">
+              <NavLink className="nav-link" id="cardtitles" to="/logout">
                 LOGOUT
               </NavLink>
             </li>

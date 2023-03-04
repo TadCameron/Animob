@@ -26,6 +26,7 @@
 }
 
 #genreheader {
+  font-family: "AniMob Font", "Arial", sans-serif;
   text-align: center;
   color: rgb(33, 42, 42);
   padding-top: 20px;
@@ -33,6 +34,7 @@
 }
 
 #genrecardbody {
+  font-family: "MyFont Bold", "Arial", sans-serif;
   font-size: 30px;
   color: black;
 }
@@ -93,6 +95,7 @@ a {
 }
 
 .card-title {
+  font-family: "MyFont Bold", "Arial", sans-serif;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -100,61 +103,61 @@ a {
 }
 
 #profileheader {
+  font-family: "AniMob Font", "Arial", sans-serif;
   color: rgb(236, 7, 7);
   text-align: center;
-  background-color: azure;
+  background-color: rgba(240, 255, 255, 0.65);
   font-size: 40px;
   margin-top: 10px;
 }
 
 #recommendedheader {
-  color: azure;
-  text-align: left;
-  background-color: black;
-  display: flex;
-  margin-left: 30px;
+  font-family: "AniMob Font", "Arial", sans-serif;
+  color: rgb(236, 7, 7);
+  text-align: center;
+  background-color: rgba(240, 255, 255, 0.65);
   font-size: 40px;
   margin-top: 50px;
 }
-#maincontent{
- position: fixed;
- left: 0;
- background-color: aliceblue;
- text-align: center;
 
+#maincontent {
+  position: fixed;
+  left: 0;
+  background-color: aliceblue;
+  text-align: center;
 }
 
-#sidebar{
+#sidebar {
   background-color: rgba(165, 11, 11, 0.997);
   padding-right: auto;
-  position:absolute;
-  right:0;
+  position: absolute;
+  right: 0;
   display: block;
   padding-right: 170px;
-
 }
-#airing{
+#airing {
   color: rgb(255, 255, 255);
   font-size: 60px;
   display: block;
   padding-left: 140px;
 }
 
-#editcard{
+#editcard {
   background-color: rgba(230, 231, 216, 0.589);
   border-color: black;
   border-width: 2px;
   width: 250px;
   height: 325px;
 }
-#editcaro{
+#editcaro {
   display: block;
-  padding-top: 400px ;
+  padding-top: 400px;
 }
 
-#editheading{
+#editheading {
+  font-family: "MyFont Bold", Arial, sans-serif;
   color: rgb(255, 255, 255);
   font-size: 20px;
   text-align: center;
-  text-decoration:underline;
+  text-decoration: underline;
 }

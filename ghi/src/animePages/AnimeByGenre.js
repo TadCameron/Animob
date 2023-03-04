@@ -27,7 +27,6 @@ function AnimeByGenre(props) {
     getData();
   }, []);
 
-
   return (
     <>
       <div className="genrecontainer">
@@ -47,6 +46,7 @@ function AnimeByGenre(props) {
                       <h5 className="card-title">{anime.animeTitle}</h5>
                       <Link
                         className="btn btn-dark"
+                        id="websitefont"
                         to={`/anime-detail/${anime.animeId}`}
                       >
                         See Details
