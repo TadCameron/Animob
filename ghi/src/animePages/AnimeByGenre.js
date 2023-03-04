@@ -46,7 +46,7 @@ function AnimeByGenre(props) {
                     <div className="card-body">
                       <h5 className="card-title">{anime.animeTitle}</h5>
                       <Link
-                        className="btn btn-primary"
+                        className="btn btn-dark"
                         to={`/anime-detail/${anime.animeId}`}
                       >
                         See Details
