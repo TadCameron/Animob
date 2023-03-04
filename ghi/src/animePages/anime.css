@@ -128,12 +128,21 @@ a {
   display: block;
   padding-right: 170px;
 
-
-
 }
 #airing{
   color: rgb(255, 255, 255);
   font-size: 60px;
   display: block;
   padding-left: 140px;
+}
+
+#editcard{
+  border-color: black;
+  border-width: 2px;
+  width: 250px;
+  height: 325px;
+}
+#editcaro{
+  display: block;
+  padding-top: 400px ;
 }

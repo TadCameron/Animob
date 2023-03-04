@@ -46,3 +46,7 @@ code {
 #navcolor {
   background-color: #353535;
 }
+
+#headercontainer{
+  align-items: center;
+}

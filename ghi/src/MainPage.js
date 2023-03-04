@@ -1,9 +1,30 @@
 import { NavLink } from "react-router-dom";
 import "./index.css";
 import { useAuthContext } from "./components/useToken";
+import Carousel from "react-multi-carousel";
 
 function MainPage() {
   const { token } = useAuthContext();
+
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
 
   return (
     <>
@@ -14,9 +35,9 @@ function MainPage() {
         >
           <h1 className="display-1 fw-bold text-center"></h1>
           <div className="mask rgba-black-light align-items-center">
-            <div className="container">
+            <div className="container-center">
               <div className="row">
-                <div className="col-md-12 mb-8 white-text text-center">
+                <div className="col white-text text-center">
                   <h1
                     className="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
                     data-wow-delay="0.3s"
@@ -54,86 +75,123 @@ function MainPage() {
                   ></hr>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                  <div className="card" id="profilecard">
-                    <img
-                      src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
-                      className="card-img-top"
-                      alt=""
-                      id="animeimage"
-                    ></img>
-                    <div className="card-body">
-                      <h5 className="card-title">Naruto</h5>
-                      <div
-                        className="btn btn-primary"
-                        to={`/anime-detail/naruto`}
-                      >
-                        See Details
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                  <div className="card" id="profilecard">
-                    <img
-                      src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
-                      className="card-img-top"
-                      alt=""
-                      id="animeimage"
-                    ></img>
-                    <div className="card-body">
-                      <h5 className="card-title">Naruto</h5>
-                      <div
-                        className="btn btn-primary"
-                        to={`/anime-detail/naruto`}
-                      >
-                        See Details
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                  <div className="card" id="profilecard">
-                    <img
-                      src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
-                      className="card-img-top"
-                      alt=""
-                      id="animeimage"
-                    ></img>
-                    <div className="card-body">
-                      <h5 className="card-title">Naruto</h5>
-                      <div
-                        className="btn btn-primary"
-                        to={`/anime-detail/naruto`}
-                      >
-                        See Details
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                  <div className="card" id="profilecard">
-                    <img
-                      src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
-                      className="card-img-top"
-                      alt=""
-                      id="animeimage"
-                    ></img>
-                    <div className="card-body">
-                      <h5 className="card-title">Naruto</h5>
-                      <div
-                        className="btn btn-primary"
-                        to={`/anime-detail/naruto`}
-                      >
-                        See Details
-                      </div>
-                    </div>
+            </div>
+          </div>
+        </div>
+        <div className="row" id="editcaro">
+          <Carousel
+            swipeable={false}
+            draggable={false}
+            showDots={true}
+            responsive={responsive}
+            ssr={true}
+            infinite={true}
+            autoPlay={false}
+            autoPlaySpeed={1000}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+          >
+            <div>
+              <div className="card" id="editcard">
+                <img
+                  src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  className="card-img-top"
+                  alt=""
+                  id="animeimage"
+                ></img>
+                <div className="card-body">
+                  <h5 className="card-title">Naruto</h5>
+                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                    See Details
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+            <div>
+              <div className="card" id="editcard">
+                <img
+                  src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  className="card-img-top"
+                  alt=""
+                  id="animeimage"
+                ></img>
+                <div className="card-body">
+                  <h5 className="card-title">Toyko Ghoul</h5>
+                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                    See Details
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="card" id="editcard">
+                <img
+                  src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  className="card-img-top"
+                  alt=""
+                  id="animeimage"
+                ></img>
+                <div className="card-body">
+                  <h5 className="card-title">Jujutsu Kaisen</h5>
+                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                    See Details
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="card" id="editcard">
+                <img
+                  src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  className="card-img-top"
+                  alt=""
+                  id="animeimage"
+                ></img>
+                <div className="card-body">
+                  <h5 className="card-title">Attack on Titan</h5>
+                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                    See Details
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="card" id="editcard">
+                <img
+                  src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  className="card-img-top"
+                  alt=""
+                  id="animeimage"
+                ></img>
+                <div className="card-body">
+                  <h5 className="card-title">Black Clover</h5>
+                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                    See Details
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="card" id="editcard">
+                <img
+                  src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  className="card-img-top"
+                  alt=""
+                  id="animeimage"
+                ></img>
+                <div className="card-body">
+                  <h5 className="card-title">Hunter x Hunter</h5>
+                  <div className="btn btn-primary" to={`/anime-detail/naruto`}>
+                    See Details
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Carousel>
         </div>
       </div>
     </>
