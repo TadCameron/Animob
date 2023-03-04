@@ -45,3 +45,7 @@ code {
 .nav-item {
   justify-content: right;
 }
+
+#navcolor {
+  background-color: #cc0000;
+}

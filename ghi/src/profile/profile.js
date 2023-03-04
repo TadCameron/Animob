@@ -74,7 +74,7 @@ function Profile(props) {
     return (
       <div key={anime.animeId}>
         <div className="col d-flex justify-content-center">
-          <div className="card" id="profilecard">
+          <div className="card" id="recommendedcard">
             <img
               src={anime.animeImg}
               className="card-img-top"
@@ -114,7 +114,7 @@ function Profile(props) {
   };
   return (
     <>
-      <div className="mainpagecontainer">
+      <div className="mainpagecontainer" id="profilecontainer">
         <div className="d-flex flex-column">
           <div id="profileheader">MY FAVORITES</div>
           <Carousel
@@ -137,7 +137,7 @@ function Profile(props) {
             {favCarousel}
           </Carousel>
 
-          <div id="profileheader">RECOMMENDED</div>
+          <div id="recommendedheader">RECOMMENDED</div>
           <Carousel
             swipeable={false}
             draggable={false}
