@@ -39,7 +39,7 @@ function AnimeDetail(props) {
     <>
       <div className="container" id="one">
         <div className="row">
-          <div className="col-6">
+          <div className="col-8" id="maincontent">
             <hr className="my-4"></hr>
             <h1 className="display-4">{detail.animeTitle}</h1>
             <hr className="my-4"></hr>
@@ -53,7 +53,8 @@ function AnimeDetail(props) {
             <h5>SYNOPSIS</h5>
             <p className="lead">{detail.synopsis}</p>
           </div>
-          <div className="col-4">
+          <div className="col-4" id="sidebar">
+            <h3 id="airing">Fans also enjoy...</h3>
             {airing.map((anime) => {
               return (
                 <div key={anime.animeId}>
@@ -67,7 +68,7 @@ function AnimeDetail(props) {
                     <div className="card-body">
                       <h5 className="card-title">{anime.animeTitle}</h5>
                       <Link
-                        className="btn btn-primary"
+                        className="btn btn-dark"
                         to={`/anime-detail/${anime.animeId}`}
                       >
                         See Details
