@@ -16,7 +16,7 @@ function MainPage() {
           <div className="mask rgba-black-light align-items-center">
             <div className="container">
               <div className="row">
-                <div className="col-md-12 mb-4 white-text text-center">
+                <div className="col-md-12 mb-8 white-text text-center">
                   <h1
                     className="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
                     data-wow-delay="0.3s"
@@ -52,6 +52,84 @@ function MainPage() {
                     class="hr-light my-4 wow fadeInDown"
                     data-wow-delay="0.4s"
                   ></hr>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="card" id="profilecard">
+                    <img
+                      src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                      className="card-img-top"
+                      alt=""
+                      id="animeimage"
+                    ></img>
+                    <div className="card-body">
+                      <h5 className="card-title">Naruto</h5>
+                      <div
+                        className="btn btn-primary"
+                        to={`/anime-detail/naruto`}
+                      >
+                        See Details
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="card" id="profilecard">
+                    <img
+                      src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                      className="card-img-top"
+                      alt=""
+                      id="animeimage"
+                    ></img>
+                    <div className="card-body">
+                      <h5 className="card-title">Naruto</h5>
+                      <div
+                        className="btn btn-primary"
+                        to={`/anime-detail/naruto`}
+                      >
+                        See Details
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="card" id="profilecard">
+                    <img
+                      src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                      className="card-img-top"
+                      alt=""
+                      id="animeimage"
+                    ></img>
+                    <div className="card-body">
+                      <h5 className="card-title">Naruto</h5>
+                      <div
+                        className="btn btn-primary"
+                        to={`/anime-detail/naruto`}
+                      >
+                        See Details
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="card" id="profilecard">
+                    <img
+                      src="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                      className="card-img-top"
+                      alt=""
+                      id="animeimage"
+                    ></img>
+                    <div className="card-body">
+                      <h5 className="card-title">Naruto</h5>
+                      <div
+                        className="btn btn-primary"
+                        to={`/anime-detail/naruto`}
+                      >
+                        See Details
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
