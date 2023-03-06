@@ -11,34 +11,6 @@ function Logout() {
     navigate("/");
   }
 
-  // useEffect(() => {
-  //   var current = null;
-  //   const submit = document.querySelector("#submit");
-
-  //   const handleSubmitFocus = () => {
-  //     if (current) current.pause();
-  //     current = anime({
-  //       targets: "path",
-  //       strokeDashoffset: {
-  //         value: -730,
-  //         duration: 700,
-  //         easing: "easeOutQuart",
-  //       },
-  //       strokeDasharray: {
-  //         value: "530 1386",
-  //         duration: 700,
-  //         easing: "easeOutQuart",
-  //       },
-  //     });
-  //   };
-
-  //   submit.addEventListener("focus", handleSubmitFocus);
-
-  //   return () => {
-  //     submit.removeEventListener("focus", handleSubmitFocus);
-  //   };
-  // }, []);
-
   return (
     <div>
       <div className="logoutcontainer">

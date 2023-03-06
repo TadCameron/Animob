@@ -6,7 +6,6 @@ import "./anime.css";
 
 function AnimeDetail(props) {
   const [detail, setDetail] = useState({});
-  const [airing, setAiring] = useState([]);
   const { animeTitle } = useParams();
 
   const getData = async () => {
@@ -19,33 +18,34 @@ function AnimeDetail(props) {
     }
   };
 
-  const getAiring = async () => {
-    const res = await fetch(
-      `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/top-airing`
-    );
-    if (res.ok) {
-      console.log(res);
-      const data1 = await res.json();
-      console.log(data1);
-      setAiring(data1);
-    }
-  };
   useEffect(() => {
     getData();
-    getAiring();
   }, []);
 
   return (
     <>
       <div className="detailcontainer">
         <div className="detail">
-          <figure class="image-left">
-            <img src={detail.animeImg} class="img" alt="..."  id="image-left"></img>
+          <figure className="image-left">
+            <img
+              src={detail.animeImg}
+              className="img"
+              alt="..."
+              id="image-left"
+            ></img>
             <figcaption>
-              <h5 class="title">{detail.animeTitle}</h5>
-              <p class="text">{detail.synopsis}</p>
-              <p class="text">
-                <small class="text-muted">{detail.genres}</small>
+              <h5 className="title">{detail.animeTitle}</h5>
+              <hr
+                className="hr-light my-4 wow fadeInDown"
+                data-wow-delay="0.4s"
+              ></hr>
+              <p className="text">{detail.synopsis}</p>
+              <hr
+                className="hr-light my-4 wow fadeInDown"
+                data-wow-delay="0.4s"
+              ></hr>
+              <p className="text">
+                <small className="text-muted">{detail.genres}</small>
               </p>
             </figcaption>
           </figure>

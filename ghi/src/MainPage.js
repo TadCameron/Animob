@@ -75,7 +75,7 @@ function MainPage() {
                     </div>
                   )}
                   <hr
-                    class="hr-light my-4 wow fadeInDown"
+                    className="hr-light my-4 wow fadeInDown"
                     data-wow-delay="0.4s"
                   ></hr>
                 </div>
@@ -83,7 +83,7 @@ function MainPage() {
             </div>
           </div>
         </div>
-        <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s"></hr>
+        <hr className="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s"></hr>
         <div className="row" id="editcaro">
           <div id="editheading"> EDITOR'S PICKS</div>
           <Carousel

@@ -148,7 +148,6 @@ function Profile(props) {
             customTransition="all .5"
             transitionDuration={500}
             containerClass="carousel-container"
-            // removeArrowOnDeviceType={["tablet", "mobile"]}
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
           >
@@ -169,7 +168,6 @@ function Profile(props) {
             customTransition="all .5"
             transitionDuration={500}
             containerClass="carousel-container"
-            // removeArrowOnDeviceType={["tablet", "mobile"]}
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
           >
