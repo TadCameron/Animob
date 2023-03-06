@@ -26,7 +26,7 @@ const getData = async () => {
                 {genres.map(genre => {
                     return (
                         <div key={genre}>
-                            <div className="col d-flex">
+                            <div className="col d-flex" id="genrecol">
                                 <div className="card" id="genrecard">
                                     <div className="card-body">
                                     <h5 className="card-title" id="genrecardbody"><Link to={`/genres/${genre}`}>{genre}</Link></h5>
