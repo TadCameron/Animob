@@ -39,21 +39,14 @@ function AnimeDetail(props) {
     <>
       <div className="detailcontainer">
         <div className="detail">
-          <img
-            src={detail.animeImg}
-            class="img"
-            alt="..."
-          ></img>
+          <img src={detail.animeImg} class="img" alt="..."></img>
 
-
-              <h5 class="card-title">{detail.animeTitle}</h5>
-              <p class="card-text">{detail.synopsis}</p>
-              <p class="card-text">
-                <small class="text-muted">{detail.genres}</small>
-              </p>
-            </div>
-
-      
+          <h5 class="title">{detail.animeTitle}</h5>
+          <p class="text">{detail.synopsis}</p>
+          <p class="text">
+            <small class="text-muted">{detail.genres}</small>
+          </p>
+        </div>
       </div>
     </>
   );

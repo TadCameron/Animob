@@ -149,7 +149,21 @@ a {
   background-color: rgb(128, 2, 2);
 }
 
-#detailcontainer{
-  height: max-content;
-  width: max-content;
+.detailcontainer{
+   background-image: url("https://w0.peakpx.com/wallpaper/1/258/HD-wallpaper-samurai-fantasy-men-torii-forest-trees-scenery-asian-men-fantasy.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.detail{
+  background-color: rgba(245, 245, 220, 0.699);
+  text-align: center;
+  padding: 100px;
+  margin: 100px;
 }
