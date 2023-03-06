@@ -36,7 +36,7 @@ function DeleteIcon(props) {
   }
 
   return (
-    <button onClick={removeFromFavorites}>
+    <button onClick={removeFromFavorites} id="plusminus">
       <MinusButton />
     </button>
   );
