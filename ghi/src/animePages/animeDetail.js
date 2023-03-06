@@ -37,30 +37,23 @@ function AnimeDetail(props) {
 
   return (
     <>
-      <div className="container" >
-        <div className="box">
-          <div className="product_img">
-            <img src={detail.animeImg} alt="" />
-          </div>
+      <div className="detailcontainer">
+        <div className="detail">
+          <img
+            src={detail.animeImg}
+            class="img"
+            alt="..."
+          ></img>
 
-          <div className="product_disc">
-            <div className="product_disc_content">
-              <div className="disc_content_about">
-                <h1>{detail.animeTitle}</h1>
-                <span>{detail.genres}</span>
-                <p>{detail.synopsis}</p>
-              </div>
 
-              <div className="product__view--more">
-                <p>view all specifications</p>
-                <div className="view__more--block"></div>
-              </div>
+              <h5 class="card-title">{detail.animeTitle}</h5>
+              <p class="card-text">{detail.synopsis}</p>
+              <p class="card-text">
+                <small class="text-muted">{detail.genres}</small>
+              </p>
             </div>
-          </div>
 
-          <button className="btn wishlist">wishlist</button>
-          <button className="btn buy">buy</button>
-        </div>
+      
       </div>
     </>
   );

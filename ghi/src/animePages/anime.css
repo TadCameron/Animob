@@ -126,28 +126,6 @@ a {
   padding-left: 20px;
 }
 
-#maincontent {
-  position: fixed;
-  left: 0;
-  background-color: aliceblue;
-  text-align: center;
-}
-
-#sidebar {
-  background-color: rgba(165, 11, 11, 0.997);
-  padding-right: auto;
-  position: absolute;
-  right: 0;
-  display: block;
-  padding-right: 170px;
-}
-#airing {
-  color: rgb(255, 255, 255);
-  font-size: 60px;
-  display: block;
-  padding-left: 140px;
-}
-
 #editcard {
   background-color: rgba(230, 231, 216, 0.589);
   border-color: black;
@@ -170,6 +148,8 @@ a {
 #navcolor{
   background-color: rgb(128, 2, 2);
 }
-#navcolor{
-  background-color: rgb(128, 2, 2);
+
+#detailcontainer{
+  height: max-content;
+  width: max-content;
 }
