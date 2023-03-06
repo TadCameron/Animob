@@ -15,9 +15,19 @@ function AnimeDetail(props) {
     if (response.ok) {
       const data = await response.json();
       setDetail(data);
+      console.log(data);
     }
   };
 
+  const getAiring = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/top-airing`
+    );
+    if (res.ok) {
+      const data1 = await res.json();
+      setAiring(data1);
+    }
+  };
   useEffect(() => {
     getData();
   }, []);

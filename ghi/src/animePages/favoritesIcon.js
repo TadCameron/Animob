@@ -1,5 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useToken } from "../components/useToken";
+
+function PlusMinusButton(props) {
+  const { found } = props;
+  if (found === false) {
+    return <p>+</p>;
+  } else {
+    return <p>-</p>;
+  }
+}
 
 function FavoritesIcon(props) {
   const [favorites, setFavorites] = useState(props.favorites);
@@ -9,19 +18,14 @@ function FavoritesIcon(props) {
   const [found, setFound] = useState(false);
   const { token } = useToken();
 
-  function PlusMinusButton() {
+  useEffect(() => {
     for (const anime of props.favorites) {
       if (anime["animeId"] === animeId) {
         setFound(true);
         break;
       }
     }
-    if (found === false) {
-      return <p>+</p>;
-    } else {
-      return <p>-</p>;
-    }
-  }
+  }, []);
 
   async function addToFavorites() {
     if (found === false) {
@@ -40,7 +44,7 @@ function FavoritesIcon(props) {
       });
       if (favResponse.ok) {
         setFavorites(true);
-        setFound(true)
+        setFound(true);
         alert(`Added to favorites!`);
       } else {
         alert(`Failed to add to favorites.`);
@@ -71,7 +75,7 @@ function FavoritesIcon(props) {
 
   return (
     <button onClick={addToFavorites} id="plusminus">
-      <PlusMinusButton />
+      <PlusMinusButton found={found} />
     </button>
   );
 }
