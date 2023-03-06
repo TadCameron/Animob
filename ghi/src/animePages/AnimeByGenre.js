@@ -52,7 +52,7 @@ function AnimeByGenre(props) {
                         See Details
                       </Link>
                       <FavoritesIcon
-                        className="btn btn-primary"
+                        className="btn btn-dark"
                         getData={props.getData}
                         favorites={props.favorites}
                         animeId={anime.animeId}
