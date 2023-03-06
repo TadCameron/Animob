@@ -39,7 +39,7 @@
   color: black;
 }
 
-#genrecol{
+#genrecol {
   justify-content: center;
 }
 
@@ -145,12 +145,12 @@ a {
   text-align: center;
   text-decoration: underline;
 }
-#navcolor{
+#navcolor {
   background-color: rgb(128, 2, 2);
 }
 
-.detailcontainer{
-   background-image: url("https://w0.peakpx.com/wallpaper/1/258/HD-wallpaper-samurai-fantasy-men-torii-forest-trees-scenery-asian-men-fantasy.jpg");
+.detailcontainer {
+  background-image: url("https://wallpaperaccess.com/full/6283011.png");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -161,9 +161,22 @@ a {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-.detail{
+.detail {
   background-color: rgba(245, 245, 220, 0.699);
-  text-align: center;
+
   padding: 100px;
   margin: 100px;
+}
+figure {
+  display: flex;
+}
+
+figcaption {
+  width: 100%;
+
+}
+
+#image-left {
+  padding-right: 10px;
+
 }
