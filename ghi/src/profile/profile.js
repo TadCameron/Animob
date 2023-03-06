@@ -60,6 +60,7 @@ function Profile(props) {
               <h5 className="card-title">{anime.animeTitle.slice(0, 20)}</h5>
               <Link
                 className="btn btn-dark"
+                id="websitefont"
                 to={`/anime-detail/${anime.animeId}`}
               >
                 See Details
