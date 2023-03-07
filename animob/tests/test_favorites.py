@@ -19,7 +19,6 @@ class MockFavoritesQuery:
     def create_favorite(
         self, favorite_in: FavoritesIn, account_id: str
     ) -> FavoritesOut:
-
         return FavoritesOut(id=2, account_id=account_id, **favorite_in.dict())
 
     def get_all(self, account_id):

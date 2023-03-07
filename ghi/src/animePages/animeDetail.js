@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import FavoritesIcon from "./favoritesIcon";
 
 import "./anime.css";
 
@@ -52,14 +51,6 @@ function AnimeDetail(props) {
               <p className="text" id="websitefont">
                 <small className="text-muted">{detail.genres}</small>
               </p>
-              <FavoritesIcon
-                        className="btn btn-dark"
-                        getData={props.getData}
-                        favorites={props.favorites}
-                        animeId={detail.animeId}
-                        animeTitle={detail.animeTitle}
-                        animeImg={detail.animeImg}
-              />
             </figcaption>
           </figure>
         </div>
