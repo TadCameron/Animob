@@ -1,10 +1,10 @@
-Mar 7-
+Mar 7- Today we all did our unit tests and started cleaning up the code by making sure there were no console.logs(), print(), or green code.
 
-Mar 6-
+Mar 6- We all redesigned our anime details page because the previous design didn't look good at all. I'd like to add some animations to it eventually.
 
-Mar 3- 
+Mar 3- towards the end of class I found a cool login animation on codepen and decided to implemented it into our code. This took a few hours and sent me down a rabbit hole until 2am trying make things look better and add other animations.
 
-Mar 2- Today I made a second carousel to go underneath the one I made yesterday.
+Mar 2- Today I made a second carousel to go underneath the one I made yesterday. I went a lot more smoothly and we all worked on front end design
 
 Mar 1- .....I spent 7 hours trying to make a carousel. Justin ended up helping me and we got it done in 30 minutes.
 
