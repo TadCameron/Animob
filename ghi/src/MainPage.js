@@ -3,8 +3,9 @@ import "./index.css";
 import { useAuthContext } from "./components/useToken";
 import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
+import FavoritesIcon from "./animePages/favoritesIcon";
 
-function MainPage() {
+function MainPage(props) {
   const { token } = useAuthContext();
 
   const responsive = {
@@ -116,6 +117,14 @@ function MainPage() {
                   <Link className="btn btn-dark" to={"/anime-detail/naruto"}>
                     See Details
                   </Link>
+                  <FavoritesIcon
+                    className="btn btn-dark"
+                    getData={props.getData}
+                    favorites={props.favorites}
+                    animeId="naruto"
+                    animeTitle="Naruto"
+                    animeImg="https://flxt.tmsimg.com/assets/p194893_b_v9_ac.jpg"
+                  />
                 </div>
               </div>
             </div>
@@ -137,6 +146,14 @@ function MainPage() {
                   >
                     See Details
                   </Link>
+                  <FavoritesIcon
+                    className="btn btn-dark"
+                    getData={props.getData}
+                    favorites={props.favorites}
+                    animeId="tokyo-ghoul"
+                    animeTitle="Tokyo Ghoul"
+                    animeImg="https://gogocdn.net/images/summer/Tokyo%20Ghoul.jpg"
+                  />
                 </div>
               </div>
             </div>
@@ -158,6 +175,14 @@ function MainPage() {
                   >
                     See Details
                   </Link>
+                  <FavoritesIcon
+                    className="btn btn-dark"
+                    getData={props.getData}
+                    favorites={props.favorites}
+                    animeId="jujutsu-kaisen-tv-dub"
+                    animeTitle="Jujutsu Kaisen"
+                    animeImg="https://gogocdn.net/cover/jujutsu-kaisen-tv.png"
+                  />
                 </div>
               </div>
             </div>
@@ -179,6 +204,14 @@ function MainPage() {
                   >
                     See Details
                   </Link>
+                  <FavoritesIcon
+                    className="btn btn-dark"
+                    getData={props.getData}
+                    favorites={props.favorites}
+                    animeId="chainsaw-man"
+                    animeTitle="Chainsaw Man"
+                    animeImg="https://gogocdn.net/cover/chainsaw-man.png"
+                  />
                 </div>
               </div>
             </div>
@@ -200,6 +233,14 @@ function MainPage() {
                   >
                     See Details
                   </Link>
+                  <FavoritesIcon
+                    className="btn btn-dark"
+                    getData={props.getData}
+                    favorites={props.favorites}
+                    animeId="black-clover-tv-dub"
+                    animeTitle="Black Clover"
+                    animeImg="https://gogocdn.net/cover/black-clover-tv-dub.png"
+                  />
                 </div>
               </div>
             </div>
@@ -221,6 +262,14 @@ function MainPage() {
                   >
                     See Details
                   </Link>
+                  <FavoritesIcon
+                    className="btn btn-dark"
+                    getData={props.getData}
+                    favorites={props.favorites}
+                    animeId="hunter-x-hunter-2011-dub"
+                    animeTitle="Hunter x Hunter"
+                    animeImg="https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/cbb55a6382682bf71e91f685c6473c5a.jpe"
+                  />
                 </div>
               </div>
             </div>
@@ -242,6 +291,14 @@ function MainPage() {
                 >
                   See Details
                 </Link>
+                <FavoritesIcon
+                  className="btn btn-dark"
+                  getData={props.getData}
+                  favorites={props.favorites}
+                  animeId="kimetsu-no-yaiba"
+                  animeTitle="Demon Slayer"
+                  animeImg="https://gogocdn.net/cover/kimetsu-no-yaiba.png"
+                />
               </div>
             </div>
           </Carousel>
