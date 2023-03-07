@@ -29,7 +29,7 @@ You can use Animob for your own Weeby pleasures by following the steps below:
 
 1. Clone the repository down to your local machine
 2. CD into the new project directory
-3. Run `docker volume create animob`
+3. Run `docker volume create mongo-data`
 4. Run `docker compose build`
 5. Run `docker compose up`
 6. Start browsing animes!
