@@ -55,7 +55,6 @@ function FavoritesIcon(props) {
           },
         ]);
         setFound(true);
-        props.getData();
         alert(`Added to favorites!`);
       } else {
         alert(`Failed to add to favorites.`);
@@ -79,7 +78,6 @@ function FavoritesIcon(props) {
       if (favResponse.ok) {
         alert(`Removed from favorites!`);
         setFound(false);
-        props.getData();
         setFavorites((prevFavorites) =>
           prevFavorites.filter((anime) => anime.animeId !== animeId)
         );
