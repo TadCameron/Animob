@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import FavoritesIcon from "./favoritesIcon";
 
 import "./anime.css";
 
@@ -19,15 +20,6 @@ function AnimeDetail(props) {
     }
   };
 
-  const getAiring = async () => {
-    const res = await fetch(
-      `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/top-airing`
-    );
-    if (res.ok) {
-      const data1 = await res.json();
-      setAiring(data1);
-    }
-  };
   useEffect(() => {
     getData();
   }, []);
@@ -44,19 +36,29 @@ function AnimeDetail(props) {
               id="image-left"
             ></img>
             <figcaption>
-              <h5 className="title">{detail.animeTitle}</h5>
+              <h5 className="title" id="cardtitles">
+                {detail.animeTitle}
+              </h5>
               <hr
                 className="hr-light my-4 wow fadeInDown"
                 data-wow-delay="0.4s"
               ></hr>
-              <p className="text">{detail.synopsis}</p>
+              <p className="text" id="websitefont">
+                {detail.synopsis}
+              </p>
               <hr
                 className="hr-light my-4 wow fadeInDown"
                 data-wow-delay="0.4s"
               ></hr>
-              <p className="text">
+              <p className="text" id="websitefont">
                 <small className="text-muted">{detail.genres}</small>
               </p>
+              <FavoritesIcon
+                animeTitle={detail.animeTitle}
+                animeImg={detail.animeImg}
+                favorites={props.favorites}
+                getData={props.getData}
+              />
             </figcaption>
           </figure>
         </div>

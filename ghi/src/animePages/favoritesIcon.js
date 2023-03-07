@@ -11,21 +11,24 @@ function PlusMinusButton(props) {
 }
 
 function FavoritesIcon(props) {
-  const [favorites, setFavorites] = useState(props.favorites);
-  const [animeId, setAnimeId] = useState(props.animeId);
-  const [animeTitle, setAnimeTitle] = useState(props.animeTitle);
-  const [animeImg, setAnimeImg] = useState(props.animeImg);
+  const [favorites, setFavorites] = useState([]);
+  const [animeId, setAnimeId] = useState(null);
+  const [animeTitle, setAnimeTitle] = useState("");
+  const [animeImg, setAnimeImg] = useState("");
   const [found, setFound] = useState(false);
   const { token } = useToken();
 
   useEffect(() => {
-    for (const anime of props.favorites) {
-      if (anime["animeId"] === animeId) {
-        setFound(true);
-        break;
+    if (Array.isArray(props.favorites)) {
+      setFavorites(props.favorites);
+      for (const anime of props.favorites) {
+        if (anime["animeId"] === animeId) {
+          setFound(true);
+          break;
+        }
       }
     }
-  }, []);
+  }, [props.favorites]);
 
   async function addToFavorites() {
     if (found === false) {
@@ -43,8 +46,16 @@ function FavoritesIcon(props) {
         credentials: "include",
       });
       if (favResponse.ok) {
-        setFavorites(true);
+        setFavorites((prevFavorites) => [
+          ...prevFavorites,
+          {
+            animeId: props.animeId,
+            animeTitle: props.animeTitle,
+            animeImg: props.animeImg,
+          },
+        ]);
         setFound(true);
+        props.getData();
         alert(`Added to favorites!`);
       } else {
         alert(`Failed to add to favorites.`);
@@ -69,6 +80,9 @@ function FavoritesIcon(props) {
         alert(`Removed from favorites!`);
         setFound(false);
         props.getData();
+        setFavorites((prevFavorites) =>
+          prevFavorites.filter((anime) => anime.animeId !== animeId)
+        );
       }
     }
   }
@@ -79,4 +93,5 @@ function FavoritesIcon(props) {
     </button>
   );
 }
+
 export default FavoritesIcon;
