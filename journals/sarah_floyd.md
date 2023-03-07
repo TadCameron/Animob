@@ -1,3 +1,9 @@
+Mar 7-
+
+Mar 6-
+
+Mar 3- 
+
 Mar 2- Today I made a second carousel to go underneath the one I made yesterday.
 
 Mar 1- .....I spent 7 hours trying to make a carousel. Justin ended up helping me and we got it done in 30 minutes.
@@ -10,7 +16,7 @@ Feb 23- Today we got most out our anime routes in React done. Tad and Row did mo
 
 Feb 22- Today we all worked together again and decided against using Redux and to just stick with React. This worked out much more easily. We had the front end auth done within a few hours.
 
-Feb 21- What a nightmare. Today we tried to implement Redux for front end auth aaaaaaand we got nowhere.
+Feb 21- What a nightmare. Today we tried to implement Redux for front end auth aaaaaaand we got nowhere. We may end up having to switch to React.
 
 Feb 16- Today I did a lot of the driving and made the favorites query and routers. Some of them worked, but then others we had to put all of our brains together to fix it. The big ah-ha moment was that we were getting a type error for one of the models and str() around row['id'] was missing.
 

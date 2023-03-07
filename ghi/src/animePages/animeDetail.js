@@ -16,7 +16,6 @@ function AnimeDetail(props) {
     if (response.ok) {
       const data = await response.json();
       setDetail(data);
-      console.log(data);
     }
   };
 

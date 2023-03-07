@@ -149,7 +149,6 @@ function SignupForm() {
             <input
               id="name"
               placeholder="name"
-
               value={full_name}
               onChange={(e) => setName(e.target.value)}
               type="text"
@@ -158,7 +157,6 @@ function SignupForm() {
             <input
               id="email"
               placeholder="email"
-
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
@@ -167,7 +165,6 @@ function SignupForm() {
             <input
               id="username"
               placeholder="username"
-
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               type="username"
