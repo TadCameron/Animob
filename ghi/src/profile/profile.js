@@ -7,7 +7,6 @@ import "react-multi-carousel/lib/styles.css";
 import DeleteIcon from "../animePages/deleteIcon";
 import FavoritesIcon from "../animePages/favoritesIcon";
 
-
 function Profile(props) {
   const [favorites, setFavorites] = useState([]);
   const [recommended, setRecommended] = useState([]);
@@ -67,13 +66,13 @@ function Profile(props) {
                 See Details
               </Link>
               <DeleteIcon
-                        className="btn btn-dark"
-                        getData={props.getData}
-                        favorites={props.favorites}
-                        animeId={anime.animeId}
-                        animeTitle={anime.animeTitle}
-                        animeImg={anime.animeImg}
-                      />
+                className="btn btn-dark"
+                getData={props.getData}
+                favorites={props.favorites}
+                animeId={anime.animeId}
+                animeTitle={anime.animeTitle}
+                animeImg={anime.animeImg}
+              />
             </div>
           </div>
         </div>
@@ -100,13 +99,13 @@ function Profile(props) {
                 See Details
               </Link>
               <FavoritesIcon
-                        className="btn btn-dark"
-                        getData={props.getData}
-                        favorites={props.favorites}
-                        animeId={anime.animeId}
-                        animeTitle={anime.animeTitle}
-                        animeImg={anime.animeImg}
-                      />
+                className="btn btn-dark"
+                getData={props.getData}
+                favorites={props.favorites}
+                animeId={anime.animeId}
+                animeTitle={anime.animeTitle}
+                animeImg={anime.animeImg}
+              />
             </div>
           </div>
         </div>

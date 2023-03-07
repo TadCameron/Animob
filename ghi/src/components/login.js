@@ -13,7 +13,6 @@ function Login() {
     login(username, password);
   }
 
-
   useEffect(() => {
     var current = null;
     const username = document.querySelector("#username");
@@ -142,9 +141,7 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <input id="submit" type="submit">
-
-            </input>
+            <input id="submit" type="submit"></input>
           </form>
         </div>
       </div>

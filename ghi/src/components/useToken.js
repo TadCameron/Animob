@@ -97,7 +97,7 @@ export function useToken() {
     if (response.ok) {
       const token = await getTokenInternal();
       setToken(token);
-      navigate("/")
+      navigate("/");
       return;
     }
     let error = await response.json();
@@ -112,7 +112,7 @@ export function useToken() {
         username,
         password,
         email,
-        full_name:fullName,
+        full_name: fullName,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -170,4 +170,4 @@ export const useUser = (token) => {
   }, [token]);
 
   return user;
-}
+};
