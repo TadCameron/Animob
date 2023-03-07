@@ -17,7 +17,7 @@ class MockFavoritesQuery:
 
         return FavoritesOut(id=2, account_id=account_id, **favorite_in.dict())
 
-    def get_all_favorites(self, account_id):
+    def get_all(self, account_id):
         return [{"animeTitle": "Bleach",
         "animeId": "Bleach",
         "animeImg": "https://gogocdn.net/images/anime/B/bleach.jpg",
@@ -34,7 +34,7 @@ class MockFavoritesQuery:
         "animeImg": "https://gogocdn.net/images/anime/B/bleach.jpg",
         "account_id": '7'}
 
-    def delete_favorite(self, favorites:FavoritesIn, account_id: int) -> FavoritesOut:
+    def delete_favorite(self, favorites:FavoritesIn, favorite_id, account_id: str) -> FavoritesOut:
         return True
 
 def test_mock_create_favorite():
@@ -58,5 +58,43 @@ def test_mock_create_favorite():
     assert response.json()["animeTitle"] == "Bleach"
     assert response.json()["animeId"] == "Bleach"
     assert response.json()["animeImg"] == "https://gogocdn.net/images/anime/B/bleach.jpg"
+
+    app.dependency_overrides = {}
+
+def test_mock_get_all():
+    # Arrange
+    app.dependency_overrides[FavoritesQueries] = MockFavoritesQuery
+    app.dependency_overrides[
+        authenticator.get_current_account_data
+    ] = mock_get_current_account_data
+    expected = {'favorites': [{"animeTitle": "Bleach",
+                 "animeId": "Bleach",
+                 "animeImg": "https://gogocdn.net/images/anime/B/bleach.jpg",
+                 "account_id": '7'},
+                {"animeTitle": "Naruto",
+                 "animeId": "Naruto",
+                 "animeImg": "https://gogocdn.net/images/anime/N/naruto.jpg",
+                 "account_id": '7'}]}
+
+    # Act
+    response = client.get("/api/favorites")
+
+    # Assert
+    assert response.status_code == 200
+    assert response.json() == expected
+
+    app.dependency_overrides = {}
+
+def test_mock_delete_favorite():
+    # Arrange
+    app.dependency_overrides[FavoritesQueries] = MockFavoritesQuery
+    app.dependency_overrides[authenticator.get_current_account_data] = mock_get_current_account_data
+
+    # Act
+    response = client.delete("/api/favorites/2")
+
+    # Assert (needs boolean)
+    assert response.status_code == 200
+    assert response.json() == True
 
     app.dependency_overrides = {}
