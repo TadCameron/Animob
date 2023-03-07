@@ -59,4 +59,4 @@ function App(){
 
 export default App;
 
-// fetch req for favorites in app.js to send to profile and anime by genre
+
