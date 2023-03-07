@@ -31,7 +31,6 @@ function DeleteIcon(props) {
     });
     if (favResponse.ok) {
       alert(`Removed from favorites!`);
-      props.getData();
     }
   }
 

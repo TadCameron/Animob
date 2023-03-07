@@ -53,10 +53,12 @@ function AnimeDetail(props) {
                 <small className="text-muted">{detail.genres}</small>
               </p>
               <FavoritesIcon
-                animeTitle={detail.animeTitle}
-                animeImg={detail.animeImg}
-                favorites={props.favorites}
-                getData={props.getData}
+                        className="btn btn-dark"
+                        getData={props.getData}
+                        favorites={props.favorites}
+                        animeId={detail.animeId}
+                        animeTitle={detail.animeTitle}
+                        animeImg={detail.animeImg}
               />
             </figcaption>
           </figure>
