@@ -1,3 +1,21 @@
+3/8/2023
+alright i think we're done
+
+3/7/2023
+did unit tests today, that went by pretty smoothly, we kind of just hashed it out pretty quickly.
+
+3/6/2023
+redesigned the anime details page detail, tried adding the add button to it but jesus I can't seem to figure it out.
+
+3/3/2023
+still more css stuff, been messing around with buttons and figuring out how to make a minus button. Sara's defintly alot better at the css stuff lol.
+
+3/2/2023
+mainly just working on front end design and stuff now. Project is mostly done with a just a few touch ups being needed
+
+3/1/2023
+finally got done with the add a favorite feature and holy that might have been the hardest thing of the project. Just glad it's finally done, everything else should be smooth sailing.
+
 2/28/2023
 Been working ALL day on creating the add a favorite and delete a favorite functionality for the front end. I feel like we're getting close, but jesus this is hard or harder than the authenctication stuff.
 
