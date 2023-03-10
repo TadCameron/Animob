@@ -19,14 +19,14 @@ class FavoritesList(BaseModel):
 
 
 class FavoritesQueries(Queries):
-    COLLECTION = 'favorites'
+    COLLECTION = "favorites"
 
     def get_all(self, account_id: str) -> list[FavoritesOut]:
         results = self.collection.find({"account_id": account_id})
         favorites = []
         for row in results:
-            row['id'] = str(row['_id'])
-            row['id'] = str(row['_id'])
+            row["id"] = str(row["_id"])
+            row["id"] = str(row["_id"])
             favorite = FavoritesOut(**row)
             favorites.append(favorite)
         return favorites
@@ -34,24 +34,29 @@ class FavoritesQueries(Queries):
     def get_favorites(self, account_id) -> FavoritesOut:
         results = self.collection.find_one({"_id": account_id})
         if results:
-            results['_id'] = str(results['account_id'])
+            results["_id"] = str(results["account_id"])
             return results
 
-    def create_favorite(self, account_id: str,
-                        favorite_in: FavoritesIn) -> FavoritesOut:
+    def create_favorite(
+        self, account_id: str, favorite_in: FavoritesIn
+    ) -> FavoritesOut:
         favorite_to_add = favorite_in.dict()
-        favorite_to_add['account_id'] = account_id
+        favorite_to_add["account_id"] = account_id
         result = self.collection.insert_one(favorite_to_add)
         if result.inserted_id:
             result = self.get_favorites(result.inserted_id)
         return result
 
-    def delete_favorite(self, account_id: str,
-                        favorite_id: str) -> list[FavoritesOut]:
-        result = self.collection.delete_one({"_id": ObjectId(favorite_id),
-                                            "account_id": account_id})
+    def delete_favorite(
+        self, account_id: str, favorite_id: str
+    ) -> list[FavoritesOut]:
+        result = self.collection.delete_one(
+            {"_id": ObjectId(favorite_id), "account_id": account_id}
+        )
         if result.deleted_count == 1:
             return self.get_all(account_id)
         else:
             raise ValueError(
-                f"Favorite with id {favorite_id} not found for account {account_id}")
+                f"Favorite with id {favorite_id}"
+                f"not found for account {account_id}"
+            )
