@@ -23,21 +23,20 @@
 }
 /* from website */
 
-@import url('https://rsms.me/inter/inter-ui.css');
+@import url("https://rsms.me/inter/inter-ui.css");
 ::selection {
   background: #272b37;
 }
 ::-webkit-selection {
-  background: #2D2F36;
+  background: #2d2f36;
 }
 ::-moz-selection {
   background: #313338;
 }
 body {
   background: rgb(50, 49, 53);
-  font-family: 'Inter UI', sans-serif;
+  font-family: "Inter UI", sans-serif;
   margin: 0;
-
 }
 .page {
   background-image: url("http://4.bp.blogspot.com/-Iudw3fm41hk/UXzVl2QM_hI/AAAAAAAC-Rw/8yR8Vyqoang/s1600/Hunter+X+Hunter+-+77+-1.jpg");
@@ -48,7 +47,6 @@ body {
   position: fixed;
   width: 100vw;
   left: 0;
-
 }
 @media (max-width: 767px) {
   .page {
@@ -58,7 +56,6 @@ body {
   }
 }
 .container {
-
   display: flex;
   height: 320px;
   width: 740px;
@@ -98,16 +95,16 @@ body {
 }
 .right {
   background: #0d1225;
-  box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
-  color: #F1F1F2;
+  box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
+  color: #f1f1f2;
   position: relative;
   width: 50%;
   top: 120px;
 }
-#right1{
+#right1 {
   display: flex;
   height: 420px;
-  width: 740p
+  width: 740p;
 }
 @media (max-width: 767px) {
   .right {
@@ -123,7 +120,7 @@ svg {
 }
 path {
   fill: none;
-  stroke: url(#linearGradient);;
+  stroke: url(#linearGradient);
   stroke-width: 4;
   stroke-dasharray: 240 1386;
 }
@@ -132,7 +129,7 @@ path {
   position: absolute;
 }
 label {
-  color:  #c2c2c5;
+  color: #c2c2c5;
   display: block;
   font-size: 14px;
   height: 16px;
