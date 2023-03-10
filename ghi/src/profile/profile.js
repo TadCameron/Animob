@@ -37,7 +37,6 @@ function Profile(props) {
     if (res.ok) {
       const data1 = await res.json();
       setRecommended(data1);
-      console.log(recommended);
     }
   };
   useEffect(() => {

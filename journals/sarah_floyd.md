@@ -1,3 +1,5 @@
+Mar 8- We're done :')
+
 Mar 7- Today we all did our unit tests and started cleaning up the code by making sure there were no console.logs(), print(), or green code.
 
 Mar 6- We all redesigned our anime details page because the previous design didn't look good at all. I'd like to add some animations to it eventually.

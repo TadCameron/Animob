@@ -33,8 +33,6 @@ function FavoritesIcon(props) {
   async function addToFavorites() {
     if (found === false) {
       const URL = `${process.env.REACT_APP_SAMPLE_SERVICE_API_HOST}/api/favorites`;
-      console.log(token);
-      console.log({ props });
       const favResponse = await fetch(URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
